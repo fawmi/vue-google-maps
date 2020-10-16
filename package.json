@@ -1,0 +1,21 @@
+{
+  "name": "@fawmi/vue-google-maps",
+  "description": "Google Map components for Vue.js 3",
+  "version": "0.0.34",
+  "private": false,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fawmi/vue-google-maps.git"
+  },
+  "author": "Fawad Mirzad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fawmi/vue-google-maps/issues"
+  },
+  "homepage": "https://vue-map.netlify.app",
+  "dependencies": {}
+}
