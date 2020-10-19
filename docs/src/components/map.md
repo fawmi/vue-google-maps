@@ -2,30 +2,40 @@
 
 ## Install
 
-to install it via NPM 
-```bash
-npm install -S @fawmi/vue-google-maps
-```
-You can also install via Yarn
-```bash
-yarn add @fawmi/vue-google-maps
-```
-
-## Example
-Here is a basic example 
+This is the base Map component. If no props are provided, it shows an empty map component with default controls. 
 
 ```javascript
-import { createApp } from 'vue'
-import googleMap from '@fawmi/vue-google-maps'
-import App from './App.vue';
+  <GoogleMap />
+```
 
-const googleMapOption = {
-    apiKey: 'here_comes_your_api_key',
-}
+## Provide your own style
+You can provide custom map styling as prop.
 
-const app = createApp(App);
+You can generate custom map styles at  [https://mapstyle.withgoogle.com/](https://mapstyle.withgoogle.com/)
+```javascript
+  <GoogleMap
+      :style="mapStyles"
+  />
+```
 
-app.use(googleMap, googleMapOption)
-app.mount('#app')
+## Disable ui elements
+You can disable all ui components at once 
+```javascript
+  <GoogleMap
+      :disableDefaultUI="true"
+  />
+```
+You can also disable specific UI components
 
+```vue
+  <GoogleMap
+      :options="{
+                      zoomControl: true,
+                      mapTypeControl: true,
+                      scaleControl: true,
+                      streetViewControl: true,
+                      rotateControl: true,
+                      fullscreenControl: true,
+                    }"
+  />
 ```

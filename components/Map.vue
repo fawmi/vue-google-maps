@@ -23,14 +23,16 @@ export default {
     style: {
       default: []
     },
+    disableDefaultUI: {
+      type: Boolean,
+    },
     options: {
       zoomControl: true,
-      mapTypeControl: false,
-      scaleControl: false,
-      streetViewControl: false,
-      rotateControl: false,
+      mapTypeControl: true,
+      scaleControl: true,
+      streetViewControl: true,
+      rotateControl: true,
       fullscreenControl: true,
-      disableDefaultUI: false
     }
   },
   setup: function(props) {
@@ -52,12 +54,25 @@ export default {
       ]
     });
 
+    let uiOptions = {}
+
+    if(props.disableDefaultUI) {
+      uiOptions = {
+        disableDefaultUI: true
+      }
+    } else {
+      uiOptions = props.options
+    }
+
+    const additionalOptions = {...props.options};
+
     const mapPromise = mapsLoader.load().then(() => {
       const map = new google.maps.Map(mapContainer.value, {
         zoom: props.zoom,
         style: props.style,
         center: new google.maps.LatLng(38.423733, 27.142826),
-        mapTypeId: "terrain"
+        mapTypeId: "terrain",
+        ...uiOptions
       });
       return map;
     });
@@ -70,9 +85,3 @@ export default {
   }
 };
 </script>
-
-<style>
-#map {
-  height: 80vh;
-}
-</style>
