@@ -43,13 +43,13 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/guide/': [
+      '/docs/': [
         {
-          title: 'Guide',
+          title: 'Getting started',
           collapsable: false,
           children: [
             '',
-            'using-vue',
+            'getting-started',
           ]
         }
       ],

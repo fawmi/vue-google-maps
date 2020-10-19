@@ -3,7 +3,7 @@ home: true
 heroImage: https://v1.vuepress.vuejs.org/hero.png
 tagline: Google maps components for Vue.js
 actionText: Quick Start →
-actionLink: /guide/
+actionLink: /docs/
 features:
 - title: Written with Vue.js
   details: This plugin makes strong use of Vue.js Composition api and is written from ground up for Vue.js 3
