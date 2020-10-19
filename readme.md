@@ -16,8 +16,31 @@ You can also install via Yarn
 yarn add @fawmi/vue-google-maps
 ```
 
+## Example
+Here is a basic example 
+
+```
+import { createApp } from 'vue'
+import googleMap from '@fawmi/vue-google-maps'
+import App from './App.vue';
+
+const googleMapOption = {
+    apiKey: 'here_comes_your_api_key',
+}
+
+const app = createApp(App);
+
+app.use(googleMap, googleMapOption)
+app.mount('#app')
+
+```
+You can also install via Yarn
+```
+yarn add @fawmi/vue-google-maps
+```
+
 ## Documentation
 
-A detailed documentation with examples can be found at https://vue-map.netlify.app/
+Checkout [https://vue-map.netlify.app](https://vue-map.netlify.app/) for a detailed documentation 
 
 
