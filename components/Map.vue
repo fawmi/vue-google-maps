@@ -7,6 +7,7 @@
 <script>
 import { Loader } from "../utils/load-google-maps";
 import { ref, provide, inject } from "vue";
+import {fitMapToMarkers} from "../utils/center-markers";
 
 export default {
   props: {
@@ -25,6 +26,9 @@ export default {
     },
     disableDefaultUI: {
       type: Boolean,
+    },
+    geoCoordinates: {
+      default: [],
     },
     options: {
       zoomControl: true,
@@ -71,9 +75,10 @@ export default {
         zoom: props.zoom,
         style: props.style,
         center: new google.maps.LatLng(38.423733, 27.142826),
-        mapTypeId: "terrain",
+        mapTypeId: props.mapTypeId,
         ...uiOptions
       });
+
       return map;
     });
 
