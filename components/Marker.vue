@@ -1,11 +1,18 @@
 <template>
-  <div>marker</div>
+  <div>
+    <slot>marker</slot>
+    <div ref="commentContainerRef" v-if="defaultSlot" :is="defaultSlot">
+      <component :is="defaultSlot"></component>
+    </div>
+  </div>
+
 </template>
 
 <script>
-import { inject } from "vue";
+import { inject, ref } from "vue";
 import {fitMapToMarkers} from "@fawmi/vue-google-maps/utils/center-markers";
 
+const commentContainerRef = ref(null);
 export default {
   props: {
     geoCoordinates: {
@@ -17,7 +24,7 @@ export default {
       default: false
     }
   },
-  setup(props) {
+  setup(props, { slots }) {
     const mapPromise = inject(
         "mapPromise"
     );
@@ -25,8 +32,7 @@ export default {
     if (mapPromise) {
       mapPromise.then((googleMap) => {
         const infoWindow = new google.maps.InfoWindow();
-
-        props.geoCoordinates.forEach(geoCoordinate=> {
+        props.geoCoordinates.forEach( geoCoordinate => {
           let marker = new google.maps.Marker({
             position: new google.maps.LatLng(
                 geoCoordinate.lat,
@@ -36,8 +42,10 @@ export default {
           });
 
           marker.addListener("click", (event) => {
-            infoWindow.setContent(`hallo`);
-            infoWindow.open(googleMap, marker);
+            if (slots.default) {
+              infoWindow.setContent(commentContainerRef.value.innerHTML);
+              infoWindow.open(googleMap, marker);
+            }
           });
         });
 
@@ -47,7 +55,10 @@ export default {
       });
     }
 
-    return {};
+    return {
+      defaultSlot: slots.default,
+      commentContainerRef
+    };
   }
 };
 </script>
