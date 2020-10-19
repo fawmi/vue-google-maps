@@ -20,7 +20,7 @@ export default {
       default: "terrain"
     },
     style: {
-      default: "width: 500px; height: 300px"
+      default: []
     },
     options: {
       zoomControl: true,
@@ -50,6 +50,7 @@ export default {
     const mapPromise = mapsLoader.load().then(() => {
       const map = new google.maps.Map(mapContainer.value, {
         zoom: props.zoom,
+        style: props.style,
         center: new google.maps.LatLng(38.423733, 27.142826),
         mapTypeId: "terrain"
       });
