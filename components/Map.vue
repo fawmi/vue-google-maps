@@ -6,7 +6,8 @@
 
 <script>
 import { Loader } from "../utils/load-google-maps";
-import { ref, provide } from "vue";
+import { ref, provide, inject } from "vue";
+
 export default {
   props: {
     center: {
@@ -35,8 +36,12 @@ export default {
   setup: function(props) {
     const mapContainer = ref(null);
 
+    const apiKey = inject(
+        "apiKey"
+    );
+
     const mapsLoader = new Loader({
-      apiKey: "",
+      apiKey: apiKey,
       version: "weekly",
       libraries: [
         "places",
