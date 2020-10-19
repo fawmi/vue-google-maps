@@ -34,26 +34,45 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: 'Docs',
+        link: '/docs/',
       },
       {
-        text: 'Config',
-        link: '/config/'
+        text: 'Github',
+        link: 'https://github.com/fawmi/vue-google-maps.git'
       }
     ],
-    sidebar: {
-      '/docs/': [
-        {
-          title: 'Getting started',
-          collapsable: false,
-          children: [
-            '',
-            'getting-started',
-          ]
-        }
-      ],
-    }
+    sidebar: [
+      {
+        title: 'Getting started',
+        path: '/docs/',
+        sidebarDepth: 2,
+        collapsable: false,
+        children: [
+          '/docs/introduction',
+          '/docs/getting-started',
+        ]
+      },
+      {
+        title: 'Components',
+        collapsable: false,
+        path: '/components/',
+        sidebarDepth: 2,
+        children: [
+          '/components/introduction',
+          '/components/map',
+        ]
+      },
+      {
+        title: 'Advanced',
+        collapsable: false,
+        path: '/advanced/',
+        sidebarDepth: 2,
+        children: [
+          '/advanced/introduction',
+        ]
+      }
+    ]
   },
 
   /**
