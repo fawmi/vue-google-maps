@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: 'assets/logo.jpg'
 tagline: Google maps components for Vue.js
 actionText: Quick Start →
 actionLink: /docs/
