@@ -62,6 +62,8 @@ module.exports = {
         children: [
           '/components/introduction',
           '/components/map',
+          '/components/marker',
+          '/components/info-window',
         ]
       },
       {
