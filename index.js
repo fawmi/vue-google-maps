@@ -12,5 +12,6 @@ export default {
         app.component('Polygon', Polygon)
         app.component('Rectangle', Rectangle)
         app.provide('apiKey', options.apiKey)
+        app.provide('mapIds', options.mapIds)
     }
 }

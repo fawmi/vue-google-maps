@@ -29,3 +29,10 @@ app.use(googleMap, googleMapOption)
 app.mount('#app')
 
 ```
+
+## Options
+apiKey is required option to load maps, you may provide following additional options if you want.
+
+###`mapIds`
+Allows you to style the map using google cloud map styling
+

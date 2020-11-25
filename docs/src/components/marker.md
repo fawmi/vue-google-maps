@@ -19,7 +19,8 @@ With marker you can show specific locations on the map
 ## Center markers automatically
 To center markers so that all the markers are visible, use:
 ```vue
-  <GoogleMap>
+  <GoogleMap
+    :centerGeoCoordinates="geoCoordinates">
     <Marker
         :centerAutomatically="false"
         :geoCoordinates="[

@@ -1,30 +1,20 @@
 <template>
-  <div>
-    <slot>marker</slot>
-    <div ref="commentContainerRef" v-if="defaultSlot" :is="defaultSlot">
-      <component :is="defaultSlot"></component>
-    </div>
-  </div>
-
+  <div>marker</div>
 </template>
 
 <script>
-import { inject, ref } from "vue";
-import {fitMapToMarkers} from "@fawmi/vue-google-maps/utils/center-markers";
+import { inject } from "vue";
 
-const commentContainerRef = ref(null);
 export default {
   props: {
-    geoCoordinates: {
-      required: true,
-      default: []
+    location: {
+      required: true
     },
-    centerAutomatically: {
-      required: false,
-      default: false
+    icon: {
+      required: false
     }
   },
-  setup(props, { slots }) {
+  setup(props) {
     const mapPromise = inject(
         "mapPromise"
     );
@@ -32,33 +22,31 @@ export default {
     if (mapPromise) {
       mapPromise.then((googleMap) => {
         const infoWindow = new google.maps.InfoWindow();
-        props.geoCoordinates.forEach( geoCoordinate => {
-          let marker = new google.maps.Marker({
-            position: new google.maps.LatLng(
-                geoCoordinate.lat,
-                geoCoordinate.lng
-            ),
-            map: googleMap
-          });
 
-          marker.addListener("click", (event) => {
-            if (slots.default) {
-              infoWindow.setContent(commentContainerRef.value.innerHTML);
-              infoWindow.open(googleMap, marker);
-            }
-          });
+        const options = {
+          position: new google.maps.LatLng(
+              props.location.lat,
+              props.location.lng
+          ),
+          map: googleMap
+        };
+
+        if (props.icon) {
+          options.icon = props.icon
+        }
+
+        const marker = new google.maps.Marker({
+          ...options,
         });
 
-        if (props.centerAutomatically) {
-          fitMapToMarkers(props.geoCoordinates, googleMap)
-        }
+        marker.addListener("click", (event) => {
+          infoWindow.setContent(`hallo`);
+          infoWindow.open(googleMap, marker);
+        });
       });
     }
 
-    return {
-      defaultSlot: slots.default,
-      commentContainerRef
-    };
+    return {};
   }
 };
 </script>

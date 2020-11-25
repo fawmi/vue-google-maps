@@ -6,8 +6,8 @@
 
 <script>
 import { Loader } from "../utils/load-google-maps";
-import { ref, provide, inject } from "vue";
-import {fitMapToMarkers} from "../utils/center-markers";
+import { fitMapToMarkers } from "../utils/center-markers";
+import { ref, provide, watch, inject } from "vue";
 
 export default {
   props: {
@@ -21,22 +21,22 @@ export default {
     mapTypeId: {
       default: "terrain"
     },
-    style: {
-      default: []
+    mapStyles: {
+      type: Array,
+      required: true
     },
-    disableDefaultUI: {
-      type: Boolean,
-    },
-    geoCoordinates: {
-      default: [],
+    centerGeoCoordinates: {
+      type: Array,
+      required: false
     },
     options: {
       zoomControl: true,
-      mapTypeControl: true,
-      scaleControl: true,
-      streetViewControl: true,
-      rotateControl: true,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      rotateControl: false,
       fullscreenControl: true,
+      disableDefaultUI: false
     }
   },
   setup: function(props) {
@@ -46,9 +46,14 @@ export default {
         "apiKey"
     );
 
+    const mapIds = inject(
+        "mapIds"
+    );
+
     const mapsLoader = new Loader({
       apiKey: apiKey,
       version: "weekly",
+      mapIds: mapIds,
       libraries: [
         "places",
         "drawing",
@@ -58,26 +63,20 @@ export default {
       ]
     });
 
-    let uiOptions = {}
-
-    if(props.disableDefaultUI) {
-      uiOptions = {
-        disableDefaultUI: true
-      }
-    } else {
-      uiOptions = props.options
-    }
-
-    const additionalOptions = {...props.options};
+    const disableDefaultUi = props?.options?.disableDefaultUI ? true : false
 
     const mapPromise = mapsLoader.load().then(() => {
       const map = new google.maps.Map(mapContainer.value, {
         zoom: props.zoom,
-        style: props.style,
-        center: new google.maps.LatLng(38.423733, 27.142826),
-        mapTypeId: props.mapTypeId,
-        ...uiOptions
+        mapId: "889b7f2cfa338388",
+        center: new google.maps.LatLng(51.2228924, 6.788524),
+        disableDefaultUI: disableDefaultUi,
+        gestureHandling: "auto",
       });
+
+      if (props.centerGeoCoordinates && props.centerGeoCoordinates.length) {
+        fitMapToMarkers(props.centerGeoCoordinates, map);
+      }
 
       return map;
     });
@@ -85,8 +84,15 @@ export default {
     provide("mapPromise", mapPromise);
 
     return {
-      mapContainer
+      mapContainer,
+      mapPromise
     };
   }
 };
 </script>
+
+<style>
+#map {
+  height: 80vh;
+}
+</style>
