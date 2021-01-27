@@ -6,8 +6,8 @@ export function fitMapToMarkers(geoCoordinates, mapInstance) {
         mapInstance.setZoom(16);
     } else if (geoCoordinates.length > 0) {
         geoCoordinates.forEach(geoCoordinate => {
-            if (geoCoordinate.lat && geoCoordinate.lng)
-                bounds.extend({lat: geoCoordinate.lat, lng: geoCoordinate.lng});
+            if (geoCoordinate.location.lat && geoCoordinate.location.lng)
+                bounds.extend({lat: geoCoordinate.location.lat, lng: geoCoordinate.location.lng});
         });
         mapInstance.fitBounds(bounds);
     }
