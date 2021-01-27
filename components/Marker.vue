@@ -10,6 +10,10 @@ export default {
     location: {
       required: true
     },
+    infoWindow: {
+      type: String,
+      required: false
+    },
     icon: {
       required: false
     }
@@ -22,7 +26,8 @@ export default {
     if (mapPromise) {
       mapPromise.then((googleMap) => {
         const infoWindow = new google.maps.InfoWindow();
-
+        console.log(props.location.lat)
+        console.log(props.location.lng)
         const options = {
           position: new google.maps.LatLng(
               props.location.lat,
@@ -34,13 +39,11 @@ export default {
         if (props.icon) {
           options.icon = props.icon
         }
-
         const marker = new google.maps.Marker({
           ...options,
         });
-
         marker.addListener("click", (event) => {
-          infoWindow.setContent(`hallo`);
+          infoWindow.setContent(props.infoWindow);
           infoWindow.open(googleMap, marker);
         });
       });
