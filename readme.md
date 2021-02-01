@@ -3,7 +3,7 @@ vue.js 3 components for Google maps
 
 ## Still in development
 
-This repo is still in active development. Most of the components are already implemeted, but some important parts are still missing. Documentations are missing too.
+This repo is still in active development. Most of the components are already implemeted, but some important parts are still missing. Documentations may not be fully upto date.
 
 ## Install
 
