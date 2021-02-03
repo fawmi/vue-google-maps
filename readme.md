@@ -2,7 +2,7 @@
 vue.js 3 components for Google maps
 
 
-![Node.js Package](https://github.com/fawmi/vue-google-maps/workflows/Node.js%20Package/badge.svg)  ![CodeQL](https://github.com/fawmi/vue-google-maps/workflows/CodeQL/badge.svg)
+![Node.js Package](https://github.com/fawmi/vue-google-maps/workflows/Node.js%20Package/badge.svg)  ![CodeQL](https://github.com/fawmi/vue-google-maps/workflows/CodeQL/badge.svg) ![David](https://img.shields.io/david/fawmi/vue-google-maps)
 
 
 ## Still in development
