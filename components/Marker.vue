@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {inject, ref} from "vue";
+import {inject, ref, computed} from "vue";
 
 export default {
   props: {
@@ -27,7 +27,9 @@ export default {
         "mapPromise"
     );
 
-    if (mapPromise) {
+    const hasLocation = computed(()=> props?.location?.lat && props?.location?.lng);
+
+    if (mapPromise && hasLocation.value) {
       mapPromise.then((googleMap) => {
         const infoWindow = new google.maps.InfoWindow();
         const options = {
