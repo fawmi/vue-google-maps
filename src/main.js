@@ -1,5 +1,5 @@
 import lazy from './utils/lazyValue'
-import { loadGMapApi } from './manager'
+import { loadGMapApi } from './load-google-maps'
 import { createApp } from 'vue'
 import Marker from './components/marker'
 import Polyline from './components/polyline'
