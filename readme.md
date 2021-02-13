@@ -17,7 +17,7 @@ npm install -S @fawmi/vue-google-maps
 ## Basic usage
 You need an API Key. Learn how to [get an Api key ](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
-##Configure Vue to use the Components
+### Configure Vue to use the Components
 
 In your `main.js` or inside a Nuxt plugin:
 
