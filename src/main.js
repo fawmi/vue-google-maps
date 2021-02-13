@@ -1,5 +1,5 @@
 import lazy from './utils/lazyValue'
-import { loadGmapApi } from './manager'
+import { loadGMapApi } from './manager'
 import { createApp } from 'vue'
 import Marker from './components/marker'
 import Polyline from './components/polyline'
@@ -18,7 +18,7 @@ let GmapApi = null
 
 // export everything
 export {
-  loadGmapApi,
+  loadGMapApi,
   Marker,
   Polyline,
   Polygon,
@@ -100,7 +100,7 @@ function makeGmapApiPromiseLazy(options) {
         return new Promise((resolve, reject) => {
           try {
             window['vueGoogleMapsInit'] = resolve
-            loadGmapApi(options.load, options.loadCn)
+            loadGMapApi(options.load, options.loadCn)
           } catch (err) {
             reject(err)
           }
