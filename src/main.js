@@ -42,7 +42,7 @@ export function install(Vue, options) {
   // Update the global `GmapApi`. This will allow
   // components to use the `google` global reactively
   // via:
-  //   import {gmapApi} from 'vue2-google-maps'
+  //   import {gmapApi} from '@fawmi/vue-google-maps'
   //   export default {  computed: { google: gmapApi }  }
   GmapApi = createApp({
     data: function () {
