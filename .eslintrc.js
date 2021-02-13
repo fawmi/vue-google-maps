@@ -7,7 +7,6 @@ module.exports = {
   "globals": {
     "google": true
   },
-  // the ts-eslint recommended ruleset sets the parser so we need to set it back
   parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 2020,
