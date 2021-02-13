@@ -7,52 +7,52 @@ import mapElementFactory from './mapElementFactory.js'
 const props = {
   maxZoom: {
     type: Number,
-    twoWay: false
+    twoWay: false,
   },
   batchSizeIE: {
     type: Number,
-    twoWay: false
+    twoWay: false,
   },
   calculator: {
     type: Function,
-    twoWay: false
+    twoWay: false,
   },
   enableRetinaIcons: {
     type: Boolean,
-    twoWay: false
+    twoWay: false,
   },
   gridSize: {
     type: Number,
-    twoWay: false
+    twoWay: false,
   },
   ignoreHidden: {
     type: Boolean,
-    twoWay: false
+    twoWay: false,
   },
   imageExtension: {
     type: String,
-    twoWay: false
+    twoWay: false,
   },
   imagePath: {
     type: String,
-    twoWay: false
+    twoWay: false,
   },
   imageSizes: {
     type: Array,
-    twoWay: false
+    twoWay: false,
   },
   minimumClusterSize: {
     type: Number,
-    twoWay: false
+    twoWay: false,
   },
   styles: {
     type: Array,
-    twoWay: false
+    twoWay: false,
   },
   zoomOnClick: {
     type: Boolean,
-    twoWay: false
-  }
+    twoWay: false,
+  },
 }
 
 const events = [
@@ -65,7 +65,7 @@ const events = [
   'mouseup',
   'mousedown',
   'mouseover',
-  'mouseout'
+  'mouseout',
 ]
 
 export default mapElementFactory({
@@ -75,13 +75,17 @@ export default mapElementFactory({
   ctr: () => {
     if (typeof MarkerClusterer === 'undefined') {
       /* eslint-disable no-console */
-      console.error('MarkerClusterer is not installed! require() it or include it from https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js')
-      throw new Error('MarkerClusterer is not installed! require() it or include it from https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js')
+      console.error(
+        'MarkerClusterer is not installed! require() it or include it from https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js'
+      )
+      throw new Error(
+        'MarkerClusterer is not installed! require() it or include it from https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js'
+      )
     }
     return MarkerClusterer
   },
-  ctrArgs: ({map, ...otherOptions}) => [map, [], otherOptions],
-  afterCreate (inst) {
+  ctrArgs: ({ map, ...otherOptions }) => [map, [], otherOptions],
+  afterCreate(inst) {
     const reinsertMarkers = () => {
       const oldMarkers = inst.getMarkers()
       inst.clearMarkers()
@@ -93,14 +97,14 @@ export default mapElementFactory({
       }
     }
   },
-  updated () {
+  updated() {
     if (this.$clusterObject) {
       this.$clusterObject.repaint()
     }
   },
-  beforeUnmount () {
+  beforeUnmount() {
     /* Performance optimization when destroying a large number of markers */
-    this.$children.forEach(marker => {
+    this.$children.forEach((marker) => {
       if (marker.$clusterObject === this.$clusterObject) {
         marker.$clusterObject = null
       }

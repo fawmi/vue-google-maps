@@ -1,10 +1,10 @@
-import {bindProps, getPropsValues} from '../utils/bindProps.js'
+import { bindProps, getPropsValues } from '../utils/bindProps.js'
 import downArrowSimulator from '../utils/simulateArrowDown.js'
-import {mappedPropsToVueProps} from './mapElementFactory'
+import { mappedPropsToVueProps } from './mapElementFactory'
 
 const mappedProps = {
   bounds: {
-    type: Object
+    type: Object,
   },
   componentRestrictions: {
     type: Object,
@@ -16,7 +16,7 @@ const mappedProps = {
     type: Array,
     default: function () {
       return []
-    }
+    },
   },
 }
 
@@ -24,34 +24,36 @@ const props = {
   selectFirstOnEnter: {
     required: false,
     type: Boolean,
-    default: false
+    default: false,
   },
   options: {
-    type: Object
-  }
+    type: Object,
+  },
 }
 
 export default {
-  mounted () {
+  mounted() {
     this.$gmapApiPromiseLazy().then(() => {
       if (this.selectFirstOnEnter) {
         downArrowSimulator(this.$refs.input)
       }
 
-      if (typeof (google.maps.places.Autocomplete) !== 'function') {
-        throw new Error('google.maps.places.Autocomplete is undefined. Did you add \'places\' to libraries when loading Google Maps?')
+      if (typeof google.maps.places.Autocomplete !== 'function') {
+        throw new Error(
+          "google.maps.places.Autocomplete is undefined. Did you add 'places' to libraries when loading Google Maps?"
+        )
       }
 
       /* eslint-disable no-unused-vars */
       const finalOptions = {
         ...getPropsValues(this, mappedProps),
-        ...this.options
+        ...this.options,
       }
 
       this.$autocomplete = new google.maps.places.Autocomplete(this.$refs.input, finalOptions)
       bindProps(this, this.$autocomplete, mappedProps)
 
-      this.$watch('componentRestrictions', v => {
+      this.$watch('componentRestrictions', (v) => {
         if (v !== undefined) {
           this.$autocomplete.setComponentRestrictions(v)
         }
@@ -66,6 +68,6 @@ export default {
   },
   props: {
     ...mappedPropsToVueProps(mappedProps),
-    ...props
-  }
+    ...props,
+  },
 }

@@ -1,32 +1,28 @@
 import WatchPrimitiveProperties from '../utils/WatchPrimitiveProperties'
 
-function capitalizeFirstLetter (string) {
+function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-export function getPropsValues (vueInst, props) {
-  return Object.keys(props)
-    .reduce(
-      (acc, prop) => {
-        if (vueInst[prop] !== undefined) {
-          acc[prop] = vueInst[prop]
-        }
-        return acc
-      },
-      {}
-    )
+export function getPropsValues(vueInst, props) {
+  return Object.keys(props).reduce((acc, prop) => {
+    if (vueInst[prop] !== undefined) {
+      acc[prop] = vueInst[prop]
+    }
+    return acc
+  }, {})
 }
 
 /**
-  * Binds the properties defined in props to the google maps instance.
-  * If the prop is an Object type, and we wish to track the properties
-  * of the object (e.g. the lat and lng of a LatLng), then we do a deep
-  * watch. For deep watch, we also prevent the _changed event from being
-  * $emitted if the data source was external.
-  */
-export function bindProps (vueInst, googleMapsInst, props, options) {
+ * Binds the properties defined in props to the google maps instance.
+ * If the prop is an Object type, and we wish to track the properties
+ * of the object (e.g. the lat and lng of a LatLng), then we do a deep
+ * watch. For deep watch, we also prevent the _changed event from being
+ * $emitted if the data source was external.
+ */
+export function bindProps(vueInst, googleMapsInst, props) {
   for (let attribute in props) {
-    let {twoWay, type, trackProperties, noBind} = props[attribute]
+    let { twoWay, type, trackProperties, noBind } = props[attribute]
 
     if (noBind) continue
 
@@ -36,7 +32,9 @@ export function bindProps (vueInst, googleMapsInst, props, options) {
     const initialValue = vueInst[attribute]
 
     if (typeof googleMapsInst[setMethodName] === 'undefined') {
-      throw new Error(`${setMethodName} is not a method of (the Maps object corresponding to) ${vueInst.$options._componentTag}`)
+      throw new Error(
+        `${setMethodName} is not a method of (the Maps object corresponding to) ${vueInst.$options._componentTag}`
+      )
     }
 
     // We need to avoid an endless
@@ -44,18 +42,22 @@ export function bindProps (vueInst, googleMapsInst, props, options) {
     // although this may really be the user's responsibility
     if (type !== Object || !trackProperties) {
       // Track the object deeply
-      vueInst.$watch(attribute, () => {
-        const attributeValue = vueInst[attribute]
+      vueInst.$watch(
+        attribute,
+        () => {
+          const attributeValue = vueInst[attribute]
 
-        googleMapsInst[setMethodName](attributeValue)
-      }, {
-        immediate: typeof initialValue !== 'undefined',
-        deep: type === Object
-      })
+          googleMapsInst[setMethodName](attributeValue)
+        },
+        {
+          immediate: typeof initialValue !== 'undefined',
+          deep: type === Object,
+        }
+      )
     } else {
       WatchPrimitiveProperties(
         vueInst,
-        trackProperties.map(prop => `${attribute}.${prop}`),
+        trackProperties.map((prop) => `${attribute}.${prop}`),
         () => {
           googleMapsInst[setMethodName](vueInst[attribute])
         },
@@ -63,10 +65,9 @@ export function bindProps (vueInst, googleMapsInst, props, options) {
       )
     }
 
-    if (twoWay &&
-        (vueInst.$gmapOptions.autobindAllEvents ||
-        vueInst.$attrs[eventName])) {
-      googleMapsInst.addListener(eventName, (ev) => { // eslint-disable-line no-unused-vars
+    if (twoWay && (vueInst.$gmapOptions.autobindAllEvents || vueInst.$attrs[eventName])) {
+      googleMapsInst.addListener(eventName, () => {
+        // eslint-disable-line no-unused-vars
         vueInst.$emit(eventName, googleMapsInst[getMethodName]())
       })
     }

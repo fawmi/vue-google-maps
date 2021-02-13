@@ -1,5 +1,5 @@
 import bindEvents from '../utils/bindEvents.js'
-import {bindProps, getPropsValues} from '../utils/bindProps.js'
+import { bindProps, getPropsValues } from '../utils/bindProps.js'
 import MapElementMixin from './mapElementMixin'
 
 /**
@@ -62,67 +62,71 @@ export default function (options) {
   assert(!(rest.props instanceof Array), '`props` should be an object, not Array')
 
   return {
-    ...(typeof GENERATE_DOC !== 'undefined' ? {$vgmOptions: options} : {}),
+    ...(typeof GENERATE_DOC !== 'undefined' ? { $vgmOptions: options } : {}),
     mixins: [MapElementMixin],
     props: {
       ...props,
       ...mappedPropsToVueProps(mappedProps),
     },
-    render () { return '' },
-    provide () {
-      const promise = this.$mapPromise.then((map) => {
-        // Infowindow needs this to be immediately available
-        this.$map = map
-
-        // Initialize the maps with the given options
-        const options = {
-          ...this.options,
-          map,
-          ...getPropsValues(this, mappedProps)
-        }
-        delete options.options // delete the extra options
-
-        if (beforeCreate) {
-          const result = beforeCreate.bind(this)(options)
-
-          if (result instanceof Promise) {
-            return result.then(() => ({options}))
-          }
-        }
-        return {options}
-      }).then(({options}) => {
-        const ConstructorObject = ctr()
-        // https://stackoverflow.com/questions/1606797/use-of-apply-with-new-operator-is-this-possible
-        this[instanceName] = ctrArgs
-          ? new (Function.prototype.bind.call(
-            ConstructorObject,
-            null,
-            ...ctrArgs(options, getPropsValues(this, props || {}))
-          ))()
-          : new ConstructorObject(options)
-
-        bindProps(this, this[instanceName], mappedProps)
-        bindEvents(this, this[instanceName], events)
-
-        if (afterCreate) {
-          afterCreate.bind(this)(this[instanceName])
-        }
-        return this[instanceName]
-      })
-      this[promiseName] = promise
-      return {[promiseName]: promise}
+    render() {
+      return ''
     },
-    unmounted () {
+    provide() {
+      const promise = this.$mapPromise
+        .then((map) => {
+          // Infowindow needs this to be immediately available
+          this.$map = map
+
+          // Initialize the maps with the given options
+          const options = {
+            ...this.options,
+            map,
+            ...getPropsValues(this, mappedProps),
+          }
+          delete options.options // delete the extra options
+
+          if (beforeCreate) {
+            const result = beforeCreate.bind(this)(options)
+
+            if (result instanceof Promise) {
+              return result.then(() => ({ options }))
+            }
+          }
+          return { options }
+        })
+        .then(({ options }) => {
+          const ConstructorObject = ctr()
+          // https://stackoverflow.com/questions/1606797/use-of-apply-with-new-operator-is-this-possible
+          this[instanceName] = ctrArgs
+            ? new (Function.prototype.bind.call(
+                ConstructorObject,
+                null,
+                ...ctrArgs(options, getPropsValues(this, props || {}))
+              ))()
+            : new ConstructorObject(options)
+
+          bindProps(this, this[instanceName], mappedProps)
+          bindEvents(this, this[instanceName], events)
+
+          if (afterCreate) {
+            afterCreate.bind(this)(this[instanceName])
+          }
+          return this[instanceName]
+        })
+      this[promiseName] = promise
+      return { [promiseName]: promise }
+    },
+    unmounted() {
       // Note: not all Google Maps components support maps
       if (this[instanceName] && this[instanceName].setMap) {
         this[instanceName].setMap(null)
       }
     },
-    ...rest
+    ...rest,
   }
 }
 
-function assert (v, message) {
+function assert(v, message) {
   if (!v) throw new Error(message)
 }
 
@@ -131,7 +135,7 @@ function assert (v, message) {
  * props definitions
  * @param {Object} props
  */
-export function mappedPropsToVueProps (mappedProps) {
+export function mappedPropsToVueProps(mappedProps) {
   return Object.entries(mappedProps)
     .map(([key, prop]) => {
       const value = {}

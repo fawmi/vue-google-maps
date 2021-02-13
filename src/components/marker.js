@@ -3,7 +3,7 @@ import mapElementFactory from './mapElementFactory.js'
 const props = {
   animation: {
     twoWay: true,
-    type: Number
+    type: Number,
   },
   attribution: {
     type: Object,
@@ -11,31 +11,30 @@ const props = {
   clickable: {
     type: Boolean,
     twoWay: true,
-    default: true
+    default: true,
   },
   cursor: {
     type: String,
-    twoWay: true
+    twoWay: true,
   },
   draggable: {
     type: Boolean,
     twoWay: true,
-    default: false
+    default: false,
   },
   icon: {
-    twoWay: true
+    twoWay: true,
   },
-  label: {
-  },
+  label: {},
   opacity: {
     type: Number,
-    default: 1
+    default: 1,
   },
   options: {
-    type: Object
+    type: Object,
   },
   place: {
-    type: Object
+    type: Object,
   },
   position: {
     type: Object,
@@ -43,15 +42,15 @@ const props = {
   },
   shape: {
     type: Object,
-    twoWay: true
+    twoWay: true,
   },
   title: {
     type: String,
-    twoWay: true
+    twoWay: true,
   },
   zIndex: {
     type: Number,
-    twoWay: true
+    twoWay: true,
   },
   visible: {
     twoWay: true,
@@ -69,7 +68,7 @@ const events = [
   'mouseup',
   'mousedown',
   'mouseover',
-  'mouseout'
+  'mouseout',
 ]
 
 /**
@@ -91,26 +90,26 @@ export default mapElementFactory({
   ctr: () => google.maps.Marker,
 
   inject: {
-    '$clusterPromise': {
+    $clusterPromise: {
       default: null,
     },
   },
 
-  render (h) {
+  render(h) {
     if (!this.$slots.default || this.$slots.default.length === 0) {
       return ''
-    } else if (this.$slots.default.length === 1) { // So that infowindows can have a marker parent
+    } else if (this.$slots.default.length === 1) {
+      // So that infowindows can have a marker parent
       return this.$slots.default[0]
     } else {
-      return h(
-        'div',
-        this.$slots.default
-      )
+      return h('div', this.$slots.default)
     }
   },
   emits: ['center_changed', 'zoom_changed', 'bounds_changed'],
-  unmounted () {
-    if (!this.$markerObject) { return }
+  unmounted() {
+    if (!this.$markerObject) {
+      return
+    }
 
     if (this.$clusterObject) {
       // Repaint will be performed in `updated()` of cluster
@@ -120,7 +119,7 @@ export default mapElementFactory({
     }
   },
 
-  beforeCreate (options) {
+  beforeCreate(options) {
     if (this.$clusterPromise) {
       options.map = null
     }
@@ -128,7 +127,7 @@ export default mapElementFactory({
     return this.$clusterPromise
   },
 
-  afterCreate (inst) {
+  afterCreate(inst) {
     if (this.$clusterPromise) {
       this.$clusterPromise.then((co) => {
         co.addMarker(inst)

@@ -4,11 +4,11 @@ const props = {
   center: {
     type: Object,
     twoWay: true,
-    required: true
+    required: true,
   },
   radius: {
     type: Number,
-    twoWay: true
+    twoWay: true,
   },
   draggable: {
     type: Boolean,
@@ -20,8 +20,8 @@ const props = {
   },
   options: {
     type: Object,
-    twoWay: false
-  }
+    twoWay: false,
+  },
 }
 
 const events = [
@@ -35,7 +35,7 @@ const events = [
   'mouseout',
   'mouseover',
   'mouseup',
-  'rightclick'
+  'rightclick',
 ]
 
 export default mapElementFactory({

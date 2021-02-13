@@ -1,30 +1,42 @@
 module.exports = {
-  root: true,
   env: {
-    node: true
+    browser: true,
+    es6: true,
+    node: true,
   },
-  extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "@vue/prettier",
-    "plugin:cypress/recommended"
-  ],
+  "globals": {
+    "google": true
+  },
+  // the ts-eslint recommended ruleset sets the parser so we need to set it back
+  parser: 'vue-eslint-parser',
+
   parserOptions: {
-    parser: "babel-eslint"
+    ecmaVersion: 2020,
+    extraFileExtensions: ['.vue'],
+    ecmaFeatures: {
+      jsx: true,
+    },
+    sourceType: 'module',
   },
+
+  extends: [
+    'plugin:vue/vue3-essential',
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'prettier/vue',
+  ],
+
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off"
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
+
   overrides: [
     {
-      files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)"
-      ],
-      env: {
-        jest: true
-      }
-    }
-  ]
-};
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+  ],
+}

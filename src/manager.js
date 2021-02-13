@@ -47,6 +47,7 @@ export const loadGmapApi = (options, loadCn) => {
     }
 
     // libraries
+    /* eslint-disable no-prototype-builtins */
     if (Array.prototype.isPrototypeOf(options.libraries)) {
       options.libraries = options.libraries.join(',')
     }
@@ -58,7 +59,9 @@ export const loadGmapApi = (options, loadCn) => {
       baseUrl = 'https://maps.google.cn/'
     }
 
-    let url = baseUrl + 'maps/api/js?' +
+    let url =
+      baseUrl +
+      'maps/api/js?' +
       Object.keys(options)
         .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(options[key]))
         .join('&')

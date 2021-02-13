@@ -37,12 +37,16 @@ new TwoWayBindingWrapper((increment, decrement, shouldUpdate) => {
   })
 })
  */
-export default function TwoWayBindingWrapper (fn) {
+export default function TwoWayBindingWrapper(fn) {
   let counter = 0
 
   fn(
-    () => { counter += 1 },
-    () => { counter = Math.max(0, counter - 1) },
-    () => counter === 0,
+    () => {
+      counter += 1
+    },
+    () => {
+      counter = Math.max(0, counter - 1)
+    },
+    () => counter === 0
   )
 }
