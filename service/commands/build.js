@@ -1,9 +1,5 @@
 'use strict'
 
-const loadEnv = require('../utils/loadEnv')
-loadEnv()
-loadEnv('production')
-
 const rm = require('rimraf')
 const webpack = require('webpack')
 

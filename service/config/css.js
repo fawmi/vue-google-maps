@@ -14,9 +14,6 @@ const genStyleRules = () => {
       esModule: false, // css-loader using ES Modules as default in v4, but vue-style-loader support cjs only.
     },
   }
-  const postcssLoader = {
-    loader: 'postcss-loader'
-  }
   const extractPluginLoader = {
     loader: MiniCssExtractPlugin.loader,
   }
@@ -25,7 +22,7 @@ const genStyleRules = () => {
   }
 
   function createCSSRule(test, loader, loaderOptions) {
-    const loaders = [cssLoader, postcssLoader]
+    const loaders = [cssLoader]
 
     if (isProd) {
       loaders.unshift(extractPluginLoader)
