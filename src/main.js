@@ -14,6 +14,7 @@ import Autocomplete from './components/autocomplete.vue'
 import MapElementMixin from './components/mapElementMixin'
 import MapElementFactory from './components/mapElementFactory'
 import MountableMixin from './utils/mountableMixin'
+import {Env} from "./utils/env";
 let GmapApi = null
 
 export {
@@ -86,14 +87,13 @@ function makeGmapApiPromiseLazy(options) {
     return lazy(() => {
       // Load the
       // This will only be evaluated once
-      if (typeof window === 'undefined') {
-        // server side -- never resolve this promise
+      if (Env.isServer()) {
         return new Promise(() => {}).then(onApiLoaded)
       } else {
         return new Promise((resolve, reject) => {
           try {
             window['vueGoogleMapsInit'] = resolve
-            loadGMapApi(options.load, options.loadCn)
+            loadGMapApi(options.load)
           } catch (err) {
             reject(err)
           }
@@ -105,8 +105,7 @@ function makeGmapApiPromiseLazy(options) {
     // end-users with the global `vueGoogleMapsInit: () => undefined`
     // when the Google Maps API has been loaded
     const promise = new Promise((resolve) => {
-      if (typeof window === 'undefined') {
-        // Do nothing if run from server-side
+      if (Env.isServer()) {
         return
       }
       window['vueGoogleMapsInit'] = resolve
