@@ -16,7 +16,6 @@ import MapElementFactory from './components/mapElementFactory'
 import MountableMixin from './utils/mountableMixin'
 let GmapApi = null
 
-// export everything
 export {
   loadGMapApi,
   Marker,
@@ -34,7 +33,6 @@ export {
 }
 
 export function install(Vue, options) {
-  // Set defaults
   options = {
     installComponents: true,
     autobindAllEvents: false,
