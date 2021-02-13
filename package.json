@@ -1,7 +1,7 @@
 {
   "name": "@fawmi/vue-google-maps",
   "description": "Google Map components for Vue.js 3",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "private": false,
   "main": "src/main.js",
   "bugs": {
@@ -33,11 +33,8 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.5.0",
     "eslint-webpack-plugin": "^2.5.0",
-    "html-webpack-plugin": "^5.0.0",
     "mini-css-extract-plugin": "^1.3.5",
     "ora": "^5.3.0",
-    "postcss": "^8.2.4",
-    "postcss-loader": "^5.0.0",
     "prettier": "2.2.1",
     "rimraf": "^3.0.2",
     "strip-ansi": "^6.0.0",
