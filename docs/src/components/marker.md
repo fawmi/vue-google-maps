@@ -1,5 +1,7 @@
 # Marker
+[[toc]]
 
+## Add marker to your components
 With a marker, you can show specific locations on the map
 ```vue
 <template>

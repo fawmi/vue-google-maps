@@ -43,22 +43,18 @@ module.exports = {
         link: 'https://github.com/fawmi/vue-google-maps.git'
       }
     ],
+    sidebarDepth: 0,
+    collapsable: false,
     sidebar: [
       {
         title: 'Getting started',
         path: '/docs/',
-        sidebarDepth: 0,
-        collapsable: false,
-        children: [
-        ]
       },
       {
         title: 'Components',
         collapsable: false,
         path: '/components/',
-        sidebarDepth: 0,
         children: [
-          '/components/introduction',
           '/components/map',
           '/components/marker',
           '/components/info-window',
@@ -69,7 +65,6 @@ module.exports = {
       },
       {
         title: 'Advanced',
-        collapsable: false,
         path: '/advanced/',
         sidebarDepth: 0,
         children: [

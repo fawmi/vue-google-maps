@@ -1,4 +1,5 @@
 # Components
+[[toc]]
 
 `@fawmi/vue-google-maps` provides a set of Vue.js 3 components wrapping the Google Maps API v3.
 

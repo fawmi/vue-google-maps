@@ -1,5 +1,5 @@
 # Map
-
+[[toc]]
 ## Install
 
 This is the base Map component. If no props are provided, it shows an empty map component with default controls.

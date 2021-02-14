@@ -1,5 +1,5 @@
 # Introduction
-
+[[toc]]
 `@fawmi/vue-google-maps` provides a set of Vue.js 3 components wrapping the Google Maps API v3.
 
 The following components are currently supported:

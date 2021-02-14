@@ -1,4 +1,6 @@
 # Info Window
+[[toc]]
+## Add info window to your components
 You can create info window by passing custom HTML or Vue components as the child of `Marker` component.
 ```vue
   <GMapMap>

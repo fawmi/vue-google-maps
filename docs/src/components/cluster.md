@@ -1,4 +1,6 @@
 # Cluster
+[[toc]]
+## Cluster your markers
 To cluster objects you simply wrap your markers with the cluster component.
 
 
