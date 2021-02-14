@@ -1,19 +1,74 @@
 ---
 home: true
 heroImage: 'assets/logo.jpg'
-tagline: Google maps components for Vue.js
-actionText: Quick Start →
+tagline: Vue 3 Google maps components
+actionText: Read Docs →
 actionLink: /docs/
-features:
-- title: Lots of utilities
-  details: Center markers, add Cluster, add custom buttons, and a lot more with just props
-- title: Supports most maps components
-  details: Most common Google map Components are implemented and are reactive out of box.
-- title: Well documented
-  details: All the components come with documentations and examples, making it extremely easy to use.
-- title: Well maintained
-  details: We heavily rely on this library in workplace. So this library is actively developed and improved.
-- title: Well tested
-  details: The library is used in production in many apps and comes with automated test, more automated test is coming.
-footer: Made by Fawad Mirzad with ❤️
 ---
+
+
+## Installation
+You can install it using npm
+```
+npm install -S @fawmi/vue-google-maps
+```
+
+## Basic usage
+You need an API Key. Learn how to [get an Api key ](https://developers.google.com/maps/documentation/javascript/get-api-key).
+
+### Configure Vue to use the Components
+
+In your `main.js` or inside a Nuxt plugin:
+
+```js
+import { createApp } from 'vue'
+import * as VueGoogleMaps from '@fawmi/vue-google-maps'
+
+const app = createApp(App);
+app.use(VueGoogleMaps, {
+    load: {
+        key: 'YOUR_API_KEY_COMES_HERE',
+    },
+}).mount('#app')
+
+```
+### Use it anywhere in your components
+```vue
+<template>
+  <GmapMap
+      :center="center"
+      :zoom="7"
+      map-type-id="terrain"
+      style="width: 500px; height: 300px"
+  >
+    <GmapCluster>
+      <GmapMarker
+          :key="index"
+          v-for="(m, index) in markers"
+          :position="m.position"
+          :clickable="true"
+          :draggable="true"
+          @click="center=m.position"
+      />
+    </GmapCluster>
+  </GmapMap>
+</template>
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      center: {lat: 51.093048, lng: 6.842120},
+      markers: [
+        {
+          position: {
+            lat: 51.093048, lng: 6.842120
+          },
+        }
+        , // Along list of clusters
+      ]
+    }
+  }
+}
+</script>
+```

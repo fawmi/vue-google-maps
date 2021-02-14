@@ -1,36 +1,17 @@
 const { description } = require('../../package.json')
 
 module.exports = {
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#title
-   */
   title: 'Vue 3 Google maps',
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#description
-   */
   description: description,
   base: '/',
-  /**
-   * Extra tags to be injected to the page HTML `<head>`
-   *
-   * ref：https://v1.vuepress.vuejs.org/config/#head
-   */
   head: [
     ['meta', { name: 'theme-color', content: '#000' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
-
-  /**
-   * Theme configuration, here is the default theme configuration for VuePress.
-   *
-   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
-   */
   themeConfig: {
-    repo: '',
+    repo: 'fawmi/vue-google-maps',
     editLinks: false,
-    docsDir: '',
-    editLinkText: '',
+    docsDir: 'docs',
+    editLinkText: 'Edit on github',
     lastUpdated: false,
     logo: '/assets/logo.jpg',
     nav: [
