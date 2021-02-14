@@ -4,31 +4,31 @@
 
 This is the base Map component. If no props are provided, it shows an empty map component with default controls.
 
-```javascript
-  <GoogleMap />
+```vue
+    <GmapMap />
 ```
 
 ## Provide your own style
 You can provide custom map styling as prop.
 
 You can generate custom map styles at  [https://mapstyle.withgoogle.com/](https://mapstyle.withgoogle.com/)
-```javascript
-  <GoogleMap
+```vue
+  <GmapMap
       :style="mapStyles"
   />
 ```
 
 ## Disable ui elements
 You can disable all ui components at once
-```javascript
-  <GoogleMap
+```vue
+  <GmapMap
       :disableDefaultUI="true"
   />
 ```
 You can also disable specific UI components
 
 ```vue
-  <GoogleMap
+  <GmapMap
       :options="{
                       zoomControl: true,
                       mapTypeControl: true,
@@ -36,24 +36,20 @@ You can also disable specific UI components
                       streetViewControl: true,
                       rotateControl: true,
                       fullscreenControl: true,
-                    }"
+                 }"
   />
 ```
 
 
 ## Access google maps instance
-You can easily access Map instance by injecting it in your component.
+You can easily access Map instance by accessing map ref in your component.
 
-```javascript
-    const loadMap = inject(
-        "mapPromise"
-    );
-
-    loadMap.then(map=> {
-        console.log( {map})
-      })
+```vue
+<GmapMap
+  ref="myMapRef"
+  :disableDefaultUI="true"
+/>
 ```
-
 
 ## Add custom button
 You can use the map instance to add custom buttons to your map

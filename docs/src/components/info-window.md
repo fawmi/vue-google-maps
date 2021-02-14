@@ -1,11 +1,8 @@
 # Info Window
-
-## Create
-
-You can create info window by passing custom HTML or Vue components as the child of `Marker` component. 
+You can create info window by passing custom HTML or Vue components as the child of `Marker` component.
 ```vue
-  <GoogleMap>
-    <Marker
+  <GmapMap>
+    <GmapMarker
         :geoCoordinates="[
           {
             lat: 51.2432981,
@@ -14,8 +11,8 @@ You can create info window by passing custom HTML or Vue components as the child
       ]"
     >
     <div>I am info window. I appear, when you click a marker</div>
-  </Marker>
-  </GoogleMap>
+  </GmapMarker>
+  </GmapMap>
 ```
 
 ## Center markers automatically
