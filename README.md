@@ -17,7 +17,7 @@ npm install -S @fawmi/vue-google-maps
 ## Basic usage
 You need an API Key. Learn how to [get an Api key ](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
-##Configure Vue to use the Components
+### Configure Vue to use the Components
 
 In your `main.js` or inside a Nuxt plugin:
 
@@ -33,17 +33,17 @@ app.use(VueGoogleMaps, {
 }).mount('#app')
 
 ```
-## Use it anywhere in your components
+### Use it anywhere in your components
 
 ```vue
 <template>
-  <GmapMap
+  <GMapMap
       :center="{lat: 51.093048, lng: 6.842120}"
       :zoom="7"
       map-type-id="terrain"
       style="width: 100vw; height: 900px"
   >
-  </GmapMap>
+  </GMapMap>
 </template>
 
 <script >
@@ -57,27 +57,25 @@ export default {
 }
 </script>
 ```
+## Components
 
 ### Markers
 
-If you need to gain access to the `Map` instance (e.g. to call `panToBounds`, `panTo`):
+If you need to add markers to the `Map`, add `GMapMarker` as child of `GMapMap` component.
 ```vue
 <template>
-  <GmapMap
+  <GMapMap
       :center="center"
       :zoom="7"
       map-type-id="terrain"
       style="width: 500px; height: 300px"
   >
-    <GmapMarker
-        :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
-        :clickable="true"
-        :draggable="true"
-        @click="center=m.position"
+    <GMapMarker
+        :key="marker.id"
+        v-for="marker in markers"
+        :position="marker.position"
     />
-  </GmapMap>
+  </GMapMap>
 </template>
 <script>
 export default {
@@ -87,6 +85,7 @@ export default {
       center: {lat: 51.093048, lng: 6.842120},
       markers: [
         {
+          id: 'dfsldjl3r',
           position: {
             lat: 51.093048, lng: 6.842120
           },
@@ -95,21 +94,23 @@ export default {
     }
   }
 }
+</script>
 ```
+
 ### Cluster
-If you have too many markers, it is helpfull to cluster markers. You can easily cluster maps by wrapping your markers with Cluster component.
+If you have too many markers, it is helpful to cluster markers. You can easily cluster markers by wrapping your markers with `GMapCluster` component.
 
 
 ```vue
 <template>
-  <GmapMap
+  <GMapMap
       :center="center"
       :zoom="7"
       map-type-id="terrain"
       style="width: 500px; height: 300px"
   >
-    <GmapCluster>
-      <GmapMarker
+    <GMapCluster>
+      <GMapMarker
           :key="index"
           v-for="(m, index) in markers"
           :position="m.position"
@@ -117,8 +118,8 @@ If you have too many markers, it is helpfull to cluster markers. You can easily 
           :draggable="true"
           @click="center=m.position"
       />
-    </GmapCluster>
-  </GmapMap>
+    </GMapCluster>
+  </GMapMap>
 </template>
 <script>
 export default {
@@ -137,16 +138,18 @@ export default {
     }
   }
 }
+</script>
 ```
-If you need to gain access to the `google` object, you can access it by getting ref of the map object.
+
+Checkout docs for more component
+
+## Access map object
+If you want to access `google map` object, you can access it by getting ref of the map object.
 ```vue
 <template>
-  <GmapMarker ref="myMarker"
-    />
+  <GMapMarker ref="myMarker" />
 </template>
 <script>
-import {gmapApi} from 'vue2-google-maps'
-
 export default {
   mounted() {
     console.log(this.$refs.myMarker)
@@ -159,7 +162,7 @@ You can pass Map options using options property:
 
 See [MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions) for a complete list of available options.
  ```vue
- <GmapMap
+ <GMapMap
   :options="{
     zoomControl: true,
     mapTypeControl: false,
@@ -170,19 +173,7 @@ See [MapOptions](https://developers.google.com/maps/documentation/javascript/ref
     disableDefaultUi: false
   }"
 >
-</GmapMap>
-```
-
-Add region and language localization:
-
-Example for [Localization](https://developers.google.com/maps/documentation/javascript/localization):
-```vue
-Vue.use(VueGoogleMaps, {
-  load: {
-    region: 'VI',
-    language: 'vi',
-  },
-})
+</GMapMap>
 ```
 
 ## Contributions
