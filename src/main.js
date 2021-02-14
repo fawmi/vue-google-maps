@@ -33,7 +33,7 @@ export {
   MountableMixin,
 }
 
-export function install(Vue, options) {
+export default function install(Vue, options) {
   options = {
     installComponents: true,
     autobindAllEvents: false,

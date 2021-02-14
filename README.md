@@ -23,7 +23,7 @@ In your `main.js` or inside a Nuxt plugin:
 
 ```js
 import { createApp } from 'vue'
-import * as VueGoogleMaps from '@fawmi/vue-google-maps'
+import  VueGoogleMaps from '@fawmi/vue-google-maps'
 
 const app = createApp(App);
 app.use(VueGoogleMaps, {
