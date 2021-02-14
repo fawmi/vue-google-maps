@@ -1,5 +1,5 @@
-import {Env} from "@/utils/env";
-import {createMapScript} from "@/utils/create-map-script";
+import {Env} from "./utils/env";
+import {createMapScript} from "./utils/create-map-script";
 
 let isApiSetUp = false
 export function loadGMapApi (options) {
