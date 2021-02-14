@@ -6,7 +6,7 @@ import Polygon from './components/polygon'
 import Circle from './components/circle'
 import Rectangle from './components/rectangle'
 import Marker from './components/marker.vue'
-import GmapCluster from './components/cluster.vue'
+import GMapCluster from './components/cluster.vue'
 import InfoWindow from './components/infoWindow.vue'
 import Map from './components/map.vue'
 import Autocomplete from './components/autocomplete.vue'
@@ -15,7 +15,7 @@ import MapElementMixin from './components/mapElementMixin'
 import buildComponent from './components/build-component'
 import MountableMixin from './utils/mountableMixin'
 import {Env} from "./utils/env";
-let GmapApi = null
+let GMapApi = null;
 
 export {
   loadGMapApi,
@@ -23,7 +23,7 @@ export {
   Polyline,
   Polygon,
   Circle,
-  GmapCluster,
+  GMapCluster,
   Rectangle,
   InfoWindow,
   Map,
@@ -40,7 +40,7 @@ export function install(Vue, options) {
     ...options,
   }
 
-  GmapApi = createApp({
+  GMapApi = createApp({
     data: function () {
       return { gmapApi: null }
     },
@@ -50,7 +50,7 @@ export function install(Vue, options) {
 
   // Use a lazy to only load the API when
   // a VGM component is loaded
-  let gmapApiPromiseLazy = makeGmapApiPromiseLazy(options)
+  let gmapApiPromiseLazy = makeGMapApiPromiseLazy(options)
 
   Vue.mixin({
     created() {
@@ -63,22 +63,22 @@ export function install(Vue, options) {
   Vue.$gmapApiPromiseLazy = gmapApiPromiseLazy
 
   if (options.installComponents) {
-    Vue.component('GmapMap', Map)
-    Vue.component('GmapMarker', Marker)
-    Vue.component('GmapInfoWindow', InfoWindow)
-    Vue.component('GmapCluster', GmapCluster)
-    Vue.component('GmapPolyline', Polyline)
-    Vue.component('GmapPolygon', Polygon)
-    Vue.component('GmapCircle', Circle)
-    Vue.component('GmapRectangle', Rectangle)
-    Vue.component('GmapAutocomplete', Autocomplete)
+    Vue.component('GMapMap', Map)
+    Vue.component('GMapMarker', Marker)
+    Vue.component('GMapInfoWindow', InfoWindow)
+    Vue.component('GMapCluster', GMapCluster)
+    Vue.component('GMapPolyline', Polyline)
+    Vue.component('GMapPolygon', Polygon)
+    Vue.component('GMapCircle', Circle)
+    Vue.component('GMapRectangle', Rectangle)
+    Vue.component('GMapAutocomplete', Autocomplete)
   }
 }
 
-function makeGmapApiPromiseLazy(options) {
+function makeGMapApiPromiseLazy(options) {
   // Things to do once the API is loaded
   function onApiLoaded() {
-    GmapApi.gmapApi = {}
+    GMapApi.gmapApi = {}
     return window.google
   }
 
@@ -113,8 +113,4 @@ function makeGmapApiPromiseLazy(options) {
 
     return lazy(() => promise)
   }
-}
-
-export function gmapApi() {
-  return GmapApi.gmapApi && window.google
 }

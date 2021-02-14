@@ -5,7 +5,7 @@
 This is the base Map component. If no props are provided, it shows an empty map component with default controls.
 
 ```vue
-    <GmapMap />
+    <GMapMap />
 ```
 
 ## Provide your own style
@@ -13,7 +13,7 @@ You can provide custom map styling as prop.
 
 You can generate custom map styles at  [https://mapstyle.withgoogle.com/](https://mapstyle.withgoogle.com/)
 ```vue
-  <GmapMap
+  <GMapMap
       :style="mapStyles"
   />
 ```
@@ -21,14 +21,14 @@ You can generate custom map styles at  [https://mapstyle.withgoogle.com/](https:
 ## Disable ui elements
 You can disable all ui components at once
 ```vue
-  <GmapMap
+  <GMapMap
       :disableDefaultUI="true"
   />
 ```
 You can also disable specific UI components
 
 ```vue
-  <GmapMap
+  <GMapMap
       :options="{
                       zoomControl: true,
                       mapTypeControl: true,
@@ -45,7 +45,7 @@ You can also disable specific UI components
 You can easily access Map instance by accessing map ref in your component.
 
 ```vue
-<GmapMap
+<GMapMap
   ref="myMapRef"
   :disableDefaultUI="true"
 />

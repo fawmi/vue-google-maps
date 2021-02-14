@@ -3,12 +3,12 @@
 With a marker, you can show specific locations on the map
 ```vue
 <template>
-  <GmapMap>
-    <GmapMarker
+  <GMapMap>
+    <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
     />
-  </GmapMap>
+  </GMapMap>
 </template>
 <script>
 export default {
@@ -34,16 +34,16 @@ You can enable or disable map events by passing props.
 
 ```vue
 <template>
-  <GmapMap
+  <GMapMap
     ref="myMarker"
   >
-    <GmapMarker
+    <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
       :position="m.position"
       :clickable="true"
       :draggable="true"
     />
-  </GmapMap>
+  </GMapMap>
 </template>
 ```

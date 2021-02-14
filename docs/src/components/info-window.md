@@ -1,34 +1,34 @@
 # Info Window
 You can create info window by passing custom HTML or Vue components as the child of `Marker` component.
 ```vue
-  <GmapMap>
-    <GmapMarker
+  <GMapMap>
+    <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
     >
-      <GmapInfoWindow>
+      <GMapInfoWindow>
         <div>I am in info window <MyComponent/>
         </div>
-      </GmapInfoWindow>
-    </GmapMarker>
-</GmapMap>
+      </GMapInfoWindow>
+    </GMapMarker>
+</GMapMap>
 ```
 
 ## Open/close info window
 You can pass `opened` prop to open and close InfoWindows.
 
 ```vue{7}
-  <GmapMap>
-    <GmapMarker
+  <GMapMap>
+    <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
     >
-      <GmapInfoWindow
+      <GMapInfoWindow
         :opened="true"
       >
         <div>I am in info window <MyComponent/>
         </div>
-      </GmapInfoWindow>
-    </GmapMarker>
-</GmapMap>
+      </GMapInfoWindow>
+    </GMapMarker>
+</GMapMap>
 ```

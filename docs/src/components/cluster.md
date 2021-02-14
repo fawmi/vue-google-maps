@@ -4,14 +4,14 @@ To cluster objects you simply wrap your markers with the cluster component.
 
 ```vue
 <template>
-  <GmapMap
+  <GMapMap
       :center="center"
       :zoom="7"
       map-type-id="terrain"
       style="width: 500px; height: 300px"
   >
-    <GmapCluster>
-      <GmapMarker
+    <GMapCluster>
+      <GMapMarker
           :key="index"
           v-for="(m, index) in markers"
           :position="m.position"
@@ -19,8 +19,8 @@ To cluster objects you simply wrap your markers with the cluster component.
           :draggable="true"
           @click="center=m.position"
       />
-    </GmapCluster>
-  </GmapMap>
+    </GMapCluster>
+  </GMapMap>
 </template>
 <script>
 export default {
