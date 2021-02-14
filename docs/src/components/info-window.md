@@ -3,30 +3,13 @@ You can create info window by passing custom HTML or Vue components as the child
 ```vue
   <GmapMap>
     <GmapMarker
-        :geoCoordinates="[
-          {
-            lat: 51.2432981,
-            lng: 6.7950981
-          }
-      ]"
+      :key="index"
+      v-for="(m, index) in markers"
     >
-    <div>I am info window. I appear, when you click a marker</div>
-  </GmapMarker>
-  </GmapMap>
-```
-
-## Center markers automatically
-To center markers so that all the markers are visible, use:
-```vue
-  <GoogleMap>
-    <Marker
-        :centerAutomatically="false"
-        :geoCoordinates="[
-          {
-            lat: 51.2432981,
-            lng: 6.7950981
-          }
-      ]"
-    />
-  </GoogleMap>
+      <GmapInfoWindow>
+        <div>I am in info window <MyComponent/>
+        </div>
+      </GmapInfoWindow>
+    </GmapMarker>
+</GmapMap>
 ```
