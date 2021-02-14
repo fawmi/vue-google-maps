@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vue.js Google maps',
+  title: 'Vue 3 Google maps',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
