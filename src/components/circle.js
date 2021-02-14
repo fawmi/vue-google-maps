@@ -1,4 +1,4 @@
-import mapElementFactory from './mapElementFactory'
+import buildComponent from './build-component'
 
 const props = {
   center: {
@@ -38,7 +38,7 @@ const events = [
   'rightclick',
 ]
 
-export default mapElementFactory({
+export default buildComponent({
   mappedProps: props,
   name: 'circle',
   ctr: () => google.maps.Circle,

@@ -1,4 +1,4 @@
-import mapElementFactory from './mapElementFactory.js'
+import buildComponent from './build-component.js'
 
 const props = {
   draggable: {
@@ -36,7 +36,7 @@ const events = [
   'rightclick',
 ]
 
-export default mapElementFactory({
+export default buildComponent({
   props: {
     deepWatch: {
       type: Boolean,

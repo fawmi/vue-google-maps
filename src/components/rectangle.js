@@ -1,4 +1,4 @@
-import mapElementFactory from './mapElementFactory.js'
+import buildComponent from './build-component.js'
 
 const props = {
   bounds: {
@@ -33,7 +33,7 @@ const events = [
   'rightclick',
 ]
 
-export default mapElementFactory({
+export default buildComponent({
   mappedProps: props,
   name: 'rectangle',
   ctr: () => google.maps.Rectangle,

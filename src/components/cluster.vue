@@ -3,7 +3,7 @@
 </template>
 <script>
 import MarkerClusterer from 'marker-clusterer-plus'
-import mapElementFactory from './mapElementFactory.js'
+import buildComponent from './build-component.js'
 const props = {
   maxZoom: {
     type: Number,
@@ -68,7 +68,7 @@ const events = [
   'mouseout',
 ]
 
-export default mapElementFactory({
+export default buildComponent({
   mappedProps: props,
   events,
   name: 'cluster',

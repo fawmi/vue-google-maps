@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import mapElementFactory from './mapElementFactory.js'
+import buildComponent from './build-component.js'
 
 const props = {
   options: {
@@ -29,7 +29,7 @@ const props = {
 
 const events = ['domready', 'closeclick', 'content_changed']
 
-export default mapElementFactory({
+export default buildComponent({
   mappedProps: props,
   events,
   name: 'infoWindow',

@@ -12,7 +12,7 @@ import Map from './components/map.vue'
 import Autocomplete from './components/autocomplete.vue'
 
 import MapElementMixin from './components/mapElementMixin'
-import MapElementFactory from './components/mapElementFactory'
+import buildComponent from './components/build-component'
 import MountableMixin from './utils/mountableMixin'
 import {Env} from "./utils/env";
 let GmapApi = null
@@ -28,7 +28,7 @@ export {
   InfoWindow,
   Map,
   MapElementMixin,
-  MapElementFactory,
+  buildComponent,
   Autocomplete,
   MountableMixin,
 }

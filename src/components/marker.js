@@ -1,4 +1,4 @@
-import mapElementFactory from './mapElementFactory.js'
+import buildComponent from './build-component.js'
 
 const props = {
   animation: {
@@ -83,7 +83,7 @@ const events = [
  * reasons. Otherwise we should use a cluster-marker mixin or
  * subclass.
  */
-export default mapElementFactory({
+export default buildComponent({
   mappedProps: props,
   events,
   name: 'marker',

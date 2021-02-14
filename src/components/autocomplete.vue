@@ -5,7 +5,7 @@
 <script>
 import { bindProps, getPropsValues } from '../utils/bindProps.js'
 import downArrowSimulator from '../utils/simulateArrowDown.js'
-import { mappedPropsToVueProps } from './mapElementFactory'
+import { mappedPropsToVueProps } from './build-component'
 
 const mappedProps = {
   bounds: {

@@ -4,7 +4,7 @@ import mountableMixin from '../utils/mountableMixin.js'
 
 import TwoWayBindingWrapper from '../utils/TwoWayBindingWrapper.js'
 import WatchPrimitiveProperties from '../utils/WatchPrimitiveProperties.js'
-import { mappedPropsToVueProps } from './mapElementFactory.js'
+import { mappedPropsToVueProps } from './build-component.js'
 
 const props = {
   center: {
