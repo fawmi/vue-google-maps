@@ -45,7 +45,7 @@ export default mapElementFactory({
   ctr: () => google.maps.Polyline,
 
   afterCreate() {
-    var clearEvents = () => {}
+    let clearEvents = () => {}
 
     this.$watch(
       'path',

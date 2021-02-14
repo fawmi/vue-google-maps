@@ -145,7 +145,7 @@ If you need to gain access to the `google` object, you can access it by getting 
     />
 </template>
 <script>
-import {gmapApi} from 'vue2-google-maps'
+import {gmapApi} from '@fawmi/vue-google-maps'
 
 export default {
   mounted() {

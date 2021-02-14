@@ -54,7 +54,7 @@ export default mapElementFactory({
   },
 
   afterCreate(inst) {
-    var clearEvents = () => {}
+    let clearEvents = () => {}
 
     // Watch paths, on our own, because we do not want to set either when it is
     // empty

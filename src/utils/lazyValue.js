@@ -1,16 +1,15 @@
-// This piece of code was orignally written by sindresorhus and can be seen here
-// https://github.com/sindresorhus/lazy-value/blob/master/index.js
+// lazy-value by sindresorhus
 
-export default (fn) => {
-  let called = false
-  let ret
+module.exports = fn => {
+  let called = false;
+  let result;
 
   return () => {
     if (!called) {
-      called = true
-      ret = fn()
+      called = true;
+      result = fn();
     }
 
-    return ret
-  }
-}
+    return result;
+  };
+};

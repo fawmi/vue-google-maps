@@ -1,9 +1,6 @@
-/* vim: set softtabstop=2 shiftwidth=2 expandtab : */
-
 <template>
   <div>
-    <div ref="flyaway">
-      <!-- so named because it will fly away to another component -->
+    <div ref="infoWindow">
       <slot> </slot>
     </div>
   </div>
@@ -51,12 +48,12 @@ export default mapElementFactory({
   },
 
   mounted() {
-    const el = this.$refs.flyaway
+    const el = this.$refs.infoWindow
     el.parentNode.removeChild(el)
   },
 
   beforeCreate(options) {
-    options.content = this.$refs.flyaway
+    options.content = this.$refs.infoWindow
 
     if (this.$markerPromise) {
       delete options.position

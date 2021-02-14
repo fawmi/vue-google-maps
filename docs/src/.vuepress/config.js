@@ -47,30 +47,31 @@ module.exports = {
       {
         title: 'Getting started',
         path: '/docs/',
-        sidebarDepth: 2,
+        sidebarDepth: 0,
         collapsable: false,
         children: [
-          '/docs/introduction',
-          '/docs/getting-started',
         ]
       },
       {
         title: 'Components',
         collapsable: false,
         path: '/components/',
-        sidebarDepth: 2,
+        sidebarDepth: 0,
         children: [
           '/components/introduction',
           '/components/map',
           '/components/marker',
           '/components/info-window',
+          '/components/cluster',
+          '/components/polygon',
+          '/components/rectangle',
         ]
       },
       {
         title: 'Advanced',
         collapsable: false,
         path: '/advanced/',
-        sidebarDepth: 2,
+        sidebarDepth: 0,
         children: [
           '/advanced/introduction',
         ]
