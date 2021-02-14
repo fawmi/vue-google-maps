@@ -1,34 +1,49 @@
 # Marker
 
-## Install
-
-With marker you can show specific locations on the map
+With a marker, you can show specific locations on the map
 ```vue
-  <GoogleMap>
-    <Marker
-        :geoCoordinates="[
-          {
-            lat: 51.2432981,
-            lng: 6.7950981
-          }
-      ]"
+<template>
+  <GmapMap>
+    <GmapMarker
+      :key="index"
+      v-for="(m, index) in markers"
     />
-  </GoogleMap>
+  </GmapMap>
+</template>
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      markers: [
+        {
+          position: {
+            lat: 51.093048, lng: 6.842120
+          },
+        }
+      ]
+    }
+  },
+}
+</script>
+
 ```
 
-## Center markers automatically
-To center markers so that all the markers are visible, use:
+## Enable/Disable events
+You can enable or disable map events by passing props.
+
 ```vue
-  <GoogleMap
-    :centerGeoCoordinates="geoCoordinates">
-    <Marker
-        :centerAutomatically="false"
-        :geoCoordinates="[
-          {
-            lat: 51.2432981,
-            lng: 6.7950981
-          }
-      ]"
+<template>
+  <GmapMap
+    ref="myMarker"
+  >
+    <GmapMarker
+      :key="index"
+      v-for="(m, index) in markers"
+      :position="m.position"
+      :clickable="true"
+      :draggable="true"
     />
-  </GoogleMap>
+  </GmapMap>
+</template>
 ```

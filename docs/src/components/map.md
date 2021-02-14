@@ -2,7 +2,7 @@
 
 ## Install
 
-This is the base Map component. If no props are provided, it shows an empty map component with default controls. 
+This is the base Map component. If no props are provided, it shows an empty map component with default controls.
 
 ```javascript
   <GoogleMap />
@@ -19,7 +19,7 @@ You can generate custom map styles at  [https://mapstyle.withgoogle.com/](https:
 ```
 
 ## Disable ui elements
-You can disable all ui components at once 
+You can disable all ui components at once
 ```javascript
   <GoogleMap
       :disableDefaultUI="true"
@@ -42,7 +42,7 @@ You can also disable specific UI components
 
 
 ## Access google maps instance
-You can easily access Map instance by injecting it in your component. 
+You can easily access Map instance by injecting it in your component.
 
 ```javascript
     const loadMap = inject(
