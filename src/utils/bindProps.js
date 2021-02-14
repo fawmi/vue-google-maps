@@ -1,8 +1,5 @@
 import WatchPrimitiveProperties from '../utils/WatchPrimitiveProperties'
-
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
+import {Str} from "./string";
 
 export function getPropsValues(vueInst, props) {
   return Object.keys(props).reduce((acc, prop) => {
@@ -26,8 +23,8 @@ export function bindProps(vueInst, googleMapsInst, props) {
 
     if (noBind) continue
 
-    const setMethodName = 'set' + capitalizeFirstLetter(attribute)
-    const getMethodName = 'get' + capitalizeFirstLetter(attribute)
+    const setMethodName = 'set' + Str.capitalizeFirstLetter(attribute)
+    const getMethodName = 'get' + Str.capitalizeFirstLetter(attribute)
     const eventName = attribute.toLowerCase() + '_changed'
     const initialValue = vueInst[attribute]
 
@@ -42,8 +39,7 @@ export function bindProps(vueInst, googleMapsInst, props) {
     // although this may really be the user's responsibility
     if (type !== Object || !trackProperties) {
       // Track the object deeply
-      vueInst.$watch(
-        attribute,
+      vueInst.$watch(attribute,
         () => {
           const attributeValue = vueInst[attribute]
 
