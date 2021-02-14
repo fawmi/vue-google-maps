@@ -1,7 +1,7 @@
 {
   "name": "@fawmi/vue-google-maps",
   "description": "Google Map components for Vue.js 3",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "private": false,
   "main": "src/main.js",
   "keywords": [
@@ -17,13 +17,11 @@
     "build": "node service/commands/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
-  "dependencies": {
-    "@babel/runtime": "^7.12.13",
-    "core-js": "^3.8.3",
-    "vue": "^3.0.5"
-  },
   "devDependencies": {
     "@babel/core": "^7.12.13",
+    "@babel/runtime": "^7.12.13",
+    "core-js": "^3.8.3",
+    "vue": "^3.0.5",
     "@babel/plugin-transform-runtime": "^7.12.15",
     "@babel/preset-env": "^7.12.13",
     "@vue/compiler-sfc": "^3.0.5",
@@ -49,5 +47,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fawmi/vue-google-maps.git"
+  },
+  "dependencies": {
+    "marker-clusterer-plus": "^2.1.4"
   }
 }
