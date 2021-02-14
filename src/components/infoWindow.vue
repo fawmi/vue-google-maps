@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div ref="infoWindow">
-      <slot> </slot>
-    </div>
+  <div ref="infoWindow">
+    <slot></slot>
   </div>
 </template>
 

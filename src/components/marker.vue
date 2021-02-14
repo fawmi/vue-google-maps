@@ -1,3 +1,10 @@
+<template>
+  <div v-if="$slots.default">
+    <slot></slot>
+  </div>
+</template>
+<script>
+
 import buildComponent from './build-component.js'
 
 const props = {
@@ -71,18 +78,6 @@ const events = [
   'mouseout',
 ]
 
-/**
- * @class Marker
- *
- * Marker class with extra support for
- *
- * - Embedded info windows
- * - Clustered markers
- *
- * Support for clustered markers is for backward-compatability
- * reasons. Otherwise we should use a cluster-marker mixin or
- * subclass.
- */
 export default buildComponent({
   mappedProps: props,
   events,
@@ -94,18 +89,6 @@ export default buildComponent({
       default: null,
     },
   },
-
-  render(h) {
-    if (!this.$slots.default || this.$slots.default.length === 0) {
-      return ''
-    } else if (this.$slots.default.length === 1) {
-      // So that infowindows can have a marker parent
-      return this.$slots.default[0]
-    } else {
-      return h('div', this.$slots.default)
-    }
-  },
-  emits: ['center_changed', 'zoom_changed', 'bounds_changed'],
   unmounted() {
     if (!this.$markerObject) {
       return
@@ -136,3 +119,4 @@ export default buildComponent({
     }
   },
 })
+</script>

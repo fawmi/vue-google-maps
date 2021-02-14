@@ -1,9 +1,12 @@
 <template>
-  <div><slot></slot></div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 <script>
 import MarkerClusterer from 'marker-clusterer-plus'
 import buildComponent from './build-component.js'
+
 const props = {
   maxZoom: {
     type: Number,
@@ -74,13 +77,9 @@ export default buildComponent({
   name: 'cluster',
   ctr: () => {
     if (typeof MarkerClusterer === 'undefined') {
-      /* eslint-disable no-console */
-      console.error(
-        'MarkerClusterer is not installed! require() it or include it from https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js'
-      )
-      throw new Error(
-        'MarkerClusterer is not installed! require() it or include it from https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js'
-      )
+      const errorMessage = 'MarkerClusterer is not installed!';
+      console.error(errorMessage);
+      throw new Error(errorMessage)
     }
     return MarkerClusterer
   },
