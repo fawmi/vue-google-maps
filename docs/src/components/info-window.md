@@ -13,3 +13,20 @@ You can create info window by passing custom HTML or Vue components as the child
     </GmapMarker>
 </GmapMap>
 ```
+
+## Open/close info window
+You can pass `opened` prop to open and close InfoWindows.
+
+```vue
+  <GmapMap>
+    <GmapMarker
+      :key="index"
+      v-for="(m, index) in markers"
+    >
+      <GmapInfoWindow :opened="true">
+        <div>I am in info window <MyComponent/>
+        </div>
+      </GmapInfoWindow>
+    </GmapMarker>
+</GmapMap>
+```
