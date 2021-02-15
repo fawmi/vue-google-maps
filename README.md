@@ -6,7 +6,7 @@ Set of mostly used Google Maps components for Vue.js.
 We heavily use Google Maps in our projects, so I wanted to have a well maintained Google Maps library.
 
 ## Documentation
-Checkout https://vue-map.netlify.app for a detailed documentation
+Checkout [vue-map.netlify.app](https://vue-map.netlify.app) for a detailed documentation
 
 ## Installation
 You can install it using npm
@@ -19,7 +19,7 @@ You need an API Key. Learn how to [get an Api key ](https://developers.google.co
 
 ### Configure Vue to use the Components
 
-In your `main.js` or inside a Nuxt plugin:
+In your `main.js`
 
 ```js
 import { createApp } from 'vue'
@@ -147,12 +147,12 @@ Checkout docs for more component
 If you want to access `google map` object, you can access it by getting ref of the map object.
 ```vue
 <template>
-  <GMapMarker ref="myMarker" />
+  <GMapMap ref="myMapRef" />
 </template>
 <script>
 export default {
   mounted() {
-    console.log(this.$refs.myMarker)
+    console.log(this.$refs.myMapRef)
   }
 }
 </script>
@@ -175,6 +175,10 @@ See [MapOptions](https://developers.google.com/maps/documentation/javascript/ref
 >
 </GMapMap>
 ```
+
+## More components
+
+Many other components are also supported. Checkout [docs](https://vue-map.netlify.app) for more.
 
 ## Contributions
 The best way to contribute is to report reproducible bugs, but feature requests and improvement suggestions are always welcome too. And definitely bug fixes and PR are welcome.
