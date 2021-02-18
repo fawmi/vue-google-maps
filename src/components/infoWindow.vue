@@ -25,7 +25,7 @@ const props = {
   },
 }
 
-const events = ['domready', 'closeclick', 'content_changed']
+const events = ['domready', 'click', 'closeclick', 'content_changed']
 
 export default buildComponent({
   mappedProps: props,
@@ -61,17 +61,14 @@ export default buildComponent({
       })
     }
   },
-
+  emits: ['closeclick'],
   methods: {
     _openInfoWindow() {
+      this.$infoWindowObject.close()
       if (this.opened) {
-        if (this.$markerObject !== null) {
-          this.$infoWindowObject.open(this.$map, this.$markerObject)
-        } else {
-          this.$infoWindowObject.open(this.$map)
-        }
+        this.$infoWindowObject.open(this.$map, this.$markerObject)
       } else {
-        this.$infoWindowObject.close()
+        this.$emit('closeclick')
       }
     },
   },

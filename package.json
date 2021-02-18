@@ -1,7 +1,7 @@
 {
   "name": "@fawmi/vue-google-maps",
   "description": "Google Map components for Vue.js 3",
-  "version": "0.7.10",
+  "version": "0.7.11",
   "private": false,
   "main": "src/main.js",
   "keywords": [

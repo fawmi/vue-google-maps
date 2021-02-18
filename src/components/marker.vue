@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$slots.default">
+  <div @click="()=> {console.log('sdfsd')}">
     <slot></slot>
   </div>
 </template>
@@ -89,6 +89,7 @@ export default buildComponent({
       default: null,
     },
   },
+  emits: events,
   unmounted() {
     if (!this.$markerObject) {
       return
@@ -114,6 +115,9 @@ export default buildComponent({
     if (this.$clusterPromise) {
       this.$clusterPromise.then((co) => {
         co.addMarker(inst)
+        inst.addListener('click', ()=> {
+          this.$emit('click')
+        });
         this.$clusterObject = co
       })
     }
