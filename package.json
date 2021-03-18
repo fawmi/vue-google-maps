@@ -1,7 +1,7 @@
 {
   "name": "@fawmi/vue-google-maps",
   "description": "Google Map components for Vue.js 3",
-  "version": "0.7.11",
+  "version": "0.7.12",
   "private": false,
   "main": "src/main.js",
   "keywords": [
@@ -11,7 +11,7 @@
     "Vue 3 Google maps"
   ],
   "bugs": {
-    "url": "https://github.com/xkjyeah/vue-google-maps/issues"
+    "url": "https://github.com/fawmi/vue-google-maps/issues"
   },
   "scripts": {
     "build": "node service/commands/build.js",
