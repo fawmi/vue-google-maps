@@ -1,4 +1,4 @@
-# Google maps Components for Vue.js 3
+# Vue 3 Google maps Components
 
 Set of mostly used Google Maps components for Vue.js.
 
