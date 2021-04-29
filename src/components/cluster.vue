@@ -103,11 +103,14 @@ export default buildComponent({
   },
   beforeUnmount() {
     /* Performance optimization when destroying a large number of markers */
-    this.$children.forEach((marker) => {
-      if (marker.$clusterObject === this.$clusterObject) {
-        marker.$clusterObject = null
-      }
-    })
+    if (this.$children && this.$children.length) {
+      this.$children.forEach((marker) => {
+        if (marker.$clusterObject === this.$clusterObject) {
+          marker.$clusterObject = null
+        }
+      })
+    }
+
 
     if (this.$clusterObject) {
       this.$clusterObject.clearMarkers()
