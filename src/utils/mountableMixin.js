@@ -28,6 +28,9 @@ export default {
     _resizeCallback() {
       this.resize()
     },
+    isFunction(functionToCheck) {
+      return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+    },
     _delayedResizeCallback() {
       this.$nextTick(() => this._resizeCallback())
     },
@@ -49,7 +52,7 @@ export default {
   },
 
   unmounted() {
-    if (this.$data._actualResizeBus) {
+    if (this.$data._actualResizeBus && this.isFunction(this.$data._actualResizeBus.$off)) {
       this.$data._actualResizeBus.$off('resize', this._delayedResizeCallback)
     }
   },
