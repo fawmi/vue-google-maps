@@ -1,8 +1,3 @@
-<template>
-  <input ref="input" v-bind="$attrs" v-on="$attrs" />
-</template>
-
-<script>
 import { bindProps, getPropsValues } from '../utils/bindProps.js'
 import downArrowSimulator from '../utils/simulateArrowDown.js'
 import { mappedPropsToVueProps } from './build-component'
@@ -76,4 +71,3 @@ export default {
     ...props,
   },
 }
-</script>
