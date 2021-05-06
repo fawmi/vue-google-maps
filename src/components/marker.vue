@@ -112,13 +112,15 @@ export default buildComponent({
   },
 
   afterCreate(inst) {
+    events.forEach((event)=> {
+      inst.addListener(event, ()=> {
+        this.$emit(event)
+      });
+    })
     if (this.$clusterPromise) {
       this.$clusterPromise.then((co) => {
-        co.addMarker(inst)
-        inst.addListener('click', ()=> {
-          this.$emit('click')
-        });
         this.$clusterObject = co
+        co.addMarker(inst)
       })
     }
   },

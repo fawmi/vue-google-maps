@@ -8,6 +8,7 @@ import Rectangle from './components/rectangle'
 import Marker from './components/marker.vue'
 import GMapCluster from './components/cluster.vue'
 import InfoWindow from './components/infoWindow.vue'
+import GMapAutocomplete from './components/autocomplete.vue'
 import Map from './components/map.vue'
 
 import MapElementMixin from './components/mapElementMixin'
@@ -25,6 +26,7 @@ export {
   GMapCluster,
   Rectangle,
   InfoWindow,
+  GMapAutocomplete,
   Map,
   MapElementMixin,
   buildComponent,
@@ -69,6 +71,7 @@ export default function install(Vue, options) {
     Vue.component('GMapPolygon', Polygon)
     Vue.component('GMapCircle', Circle)
     Vue.component('GMapRectangle', Rectangle)
+    Vue.component('GMapAutocomplete ', GMapAutocomplete )
   }
 }
 
