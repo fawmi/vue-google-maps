@@ -113,8 +113,8 @@ export default buildComponent({
 
   afterCreate(inst) {
     events.forEach((event)=> {
-      inst.addListener(event, ()=> {
-        this.$emit(event)
+      inst.addListener(event, (payload)=> {
+        this.$emit(event, payload)
       });
     })
     if (this.$clusterPromise) {
