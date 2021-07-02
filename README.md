@@ -6,7 +6,7 @@ Set of mostly used Google Maps components for Vue.js.
 We heavily use Google Maps in our projects, so I wanted to have a well maintained Google Maps library.
 
 ## Documentation
-Checkout [vue-map.netlify.app](https://vue-map.netlify.app) for a detailed documentation
+Checkout [vue-map.netlify.app](https://vue-map.netlify.app) for a detailed documentation or [codesandbox for an example](https://codesandbox.io/s/vue-3-google-maps-ygpr4?file=/src/main.js)
 
 ## Installation
 You can install it using npm
