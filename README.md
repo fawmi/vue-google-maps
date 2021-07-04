@@ -141,6 +141,64 @@ export default {
 </script>
 ```
 
+### Heatmap
+If you need to add heatmap layer to the Map, add visualization library in load config and add GMapHeatmap as child of GMapMap component.
+
+```js
+import { createApp } from 'vue'
+import  VueGoogleMaps from '@fawmi/vue-google-maps'
+
+const app = createApp(App);
+app.use(VueGoogleMaps, {
+  load: {
+    key: 'YOUR_API_KEY_COMES_HERE',
+    libraries: "visualization"
+  },
+}).mount('#app')
+
+```
+
+```vue
+<template>
+  <GMapMap
+    ref="myMapRef"
+    :center="center"
+    :zoom="zoom"
+    style="width: 100%; height: 600px"
+  >
+    <GMapHeatmap :data="heatData"></GMapHeatmap>
+  </GMapMap>
+</template>
+<script>
+export default {
+  name: 'App',
+  setup() {
+    const center = {lat: 52.2985593, lng: 104.2455337}
+    const zoom = 12
+    const myMapRef = ref();
+    const heatData = ref([])
+
+    watch(myMapRef, googleMap => {
+      if (googleMap) {
+        googleMap.$mapPromise.then(map=> {
+          heatData.value = [
+            {location: new google.maps.LatLng({lat: 52.2985593, lng: 104.2455337})},
+          ];
+        })
+      }
+    });
+
+    return {
+      center,
+      zoom,
+      heatData,
+      myMapRef
+    }
+  },
+}
+</script>
+```
+
 Checkout docs for more component
 
 ## Access map object
