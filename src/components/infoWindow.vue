@@ -73,7 +73,11 @@ export default buildComponent({
     },
   },
 
-  afterCreate() {
+  afterCreate(inst) {
+    inst.addEventListener('closeclick', () => {
+      this.$emit('closeclick')
+    });
+
     this._openInfoWindow()
     this.$watch('opened', () => {
       this._openInfoWindow()
