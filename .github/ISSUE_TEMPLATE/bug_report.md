@@ -7,6 +7,10 @@ assignees: ''
 
 ---
 
+**Are you asking a question?**
+If you are asking a question, please use Github discussions for that. 
+
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
