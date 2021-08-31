@@ -11,6 +11,10 @@ assignees: ''
 If you are asking a question, please use Github discussions for that. 
 
 
+**Event xyz is not working?**
+You should enable events, before using them https://vue-map.netlify.app/docs/#register-google-maps-events. 
+
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
