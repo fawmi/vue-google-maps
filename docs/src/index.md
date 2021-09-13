@@ -2,7 +2,7 @@
 home: true
 heroImage: 'assets/logo.jpg'
 tagline: Reactive Vue 3 components for Google maps.
-actionText: Read Docs →
+actionText: Read Docs
 actionLink: /docs/
 ---
 
