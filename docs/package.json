@@ -1,0 +1,19 @@
+{
+  "name": "vue-google-maps-docs",
+  "version": "0.0.1",
+  "description": "Vue.js 3 components for Google maps",
+  "main": "index.js",
+  "authors": {
+    "name": "Fawad Mirzad",
+    "email": "hi@fawmi.com"
+  },
+  "repository": "fawmi/vue-google-maps-docs/vue-google-maps-docs",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
