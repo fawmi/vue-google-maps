@@ -240,5 +240,3 @@ Many other components are also supported. Checkout [docs](https://vue-map.netlif
 
 ## Contributions
 The best way to contribute is to report reproducible bugs, but feature requests and improvement suggestions are always welcome too. And definitely bug fixes and PR are welcome.
-
-Docs are hosted in a separate repository. You can contribute to the docs in  [this repository](https://github.com/fawmi/vue-google-maps-docs).
