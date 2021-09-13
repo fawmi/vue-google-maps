@@ -10,3 +10,4 @@ babel.config.js
 build-copy.js
 CONTRIBUTING.md
 jsconfig.json
+docs
