@@ -16,7 +16,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'theme-color', content: '#2c3e50' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
@@ -33,7 +33,7 @@ module.exports = {
     editLinkText: '',
     logo: '/assets/logo.jpg',
     head: [
-      ['meta', { name: 'theme-color', content: '#000' }],
+      ['meta', { name: 'theme-color', content: '#2c3e50' }],
     ],
     lastUpdated: false,
     nav: [
