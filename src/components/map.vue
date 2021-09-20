@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-map-container">
+  <div class="vue-map-container" :class="$attrs.class">
     <div ref="vue-map" class="vue-map"></div>
     <div class="vue-map-hidden">
       <slot></slot>
@@ -103,7 +103,8 @@ const customMethods = {
 
 export default {
   mixins: [mountableMixin],
-  props: mappedPropsToVueProps(props),
+  props: mappedPropsToVueProps({...props, ...events.reduce((obj, eventName) => ({...obj, [`on${eventName.charAt(0).toUpperCase()}${eventName.slice(1)}`.replace(/[-_]+(.)?/g, (_, c) => c ? c.toUpperCase() : '')]: Function}), {}) } ),
+  inheritAttrs: false,
 
   provide() {
     this.$mapPromise = new Promise((resolve, reject) => {
