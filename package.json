@@ -49,6 +49,6 @@
   },
   "types": "types/index.d.ts",
   "dependencies": {
-    "marker-clusterer-plus": "^2.1.4"
+    "@googlemaps/markerclustererplus": "^1.2.3"
   }
 }
