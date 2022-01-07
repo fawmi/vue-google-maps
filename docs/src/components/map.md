@@ -47,6 +47,36 @@ You can generate custom map styles at  [https://mapstyle.withgoogle.com/](https:
 
 Example on [stackblitz](https://stackblitz.com/edit/vue-google-maps-marker-ssnfbn?file=src/components/ComponentWithMap.vue)
 
+### Cloud-based Styling with Map ID
+
+You can manage your cloud-based styles on [Google Maps Platform: Map Styles](https://console.cloud.google.com/google/maps-apis/studio/styles), and your map ids on [Google Maps Platform: Map Management](https://console.cloud.google.com/google/maps-apis/studio/maps)
+
+[Documentation: Maps JavaScript API - Using Cloud-based maps styling](https://developers.google.com/maps/documentation/javascript/cloud-based-map-styling)
+
+```vue{4}
+<script>
+    <template>
+      <GMapMap :center="center"
+      :options="options"
+       :zoom="10"
+       map-type-id="terrain"
+       style="width: 100vw; height: 20rem">
+      </GMapMap>
+    </template>
+
+<script>
+  export default {
+  data() {
+    return {
+      center: { lat: 51.093048, lng: 6.84212 },
+      options: {
+        mapId:'xxx' //here comes your map id
+      },
+    };
+  }
+};
+</script>
+```
 
 ## Disable ui elements
 You can disable all ui components at once
