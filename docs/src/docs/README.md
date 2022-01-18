@@ -24,6 +24,7 @@ const app = createApp(App);
 app.use(VueGoogleMaps, {
     load: {
         key: 'YOUR_API_KEY_COMES_HERE',
+        // language: 'de',
     },
 }).mount('#app')
 ```
