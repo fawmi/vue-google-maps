@@ -87,7 +87,7 @@ To use custom icon, pass `:icon` prop. You can pass a local resource or an image
   </GMapMap>
 </template>
 ```
-
+Local resources can be passed in using `require`, for example: `:icon="require('@/assets/images/place-icon.svg').default"`.
 
 You can also pass an object to the icon `prop` to define custom size and label origin: 
 
