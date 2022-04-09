@@ -38,7 +38,7 @@ app.use(VueGoogleMaps, {
 ```vue
 <template>
   <GMapMap
-      :center="{lat: 51.093048, lng: 6.842120}"
+      :center="center"
       :zoom="7"
       map-type-id="terrain"
       style="width: 100vw; height: 900px"
