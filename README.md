@@ -238,5 +238,33 @@ See [MapOptions](https://developers.google.com/maps/documentation/javascript/ref
 
 Many other components are also supported. Checkout [docs](https://vue-map.netlify.app) for more.
 
+### Nuxt 3 usage
+
+First add `@fawmi/vue-google-maps` to `build.transpile` property in your `nuxt.config.ts`.
+
+ ```ts
+export default defineNuxtConfig({
+  build: {
+    transpile: ['@fawmi/vue-google-maps']
+  },
+})
+ ```
+
+Then create a plugin `~/plugin/vueGoogleMaps.ts`, you can store the API key in publicRuntimeConfig, checkout [nuxt docs](https://nuxtjs.org/docs/directory-structure/nuxt-config#runtimeconfig).
+
+```ts
+import { defineNuxtPlugin } from '#app'
+import  VueGoogleMaps from '@fawmi/vue-google-maps'
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(VueGoogleMaps, {
+    load: {
+      key: nuxtApp.$config.googleApiKey,
+    },
+  })
+})
+```
+
+
 ## Contributions
 The best way to contribute is to report reproducible bugs, but feature requests and improvement suggestions are always welcome too. And definitely bug fixes and PR are welcome.
