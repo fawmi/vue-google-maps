@@ -1,6 +1,6 @@
 // lazy-value by sindresorhus
 
-module.exports = fn => {
+export default fn => {
   let called = false;
   let result;
 
