@@ -1,6 +1,6 @@
 <template>
   <div class="vue-map-container" :class="$attrs.class">
-    <div ref="vue-map" class="vue-map"></div>
+    <div ref="vue-map" class="vue-map" :style="style ? style : ''"></div>
     <div class="vue-map-hidden">
       <slot></slot>
     </div>
