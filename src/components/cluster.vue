@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import MarkerClusterer from '@googlemaps/markerclustererplus';
+import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import buildComponent from './build-component.js'
 
 const props = {
