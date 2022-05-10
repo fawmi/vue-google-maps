@@ -83,7 +83,8 @@ module.exports = {
         path: '/examples/',
         children: [
           '/examples/points-in-polygon',
-          '/examples/how-to-access-google-maps-object'
+          '/examples/how-to-access-google-maps-object',
+          '/examples/how-to-add-custom-controls'
         ]
       },
 
