@@ -98,7 +98,7 @@ export default buildComponent({
   },
   updated() {
     if (this.$clusterObject) {
-      this.$clusterObject.repaint()
+      this.$clusterObject.render()
     }
   },
   beforeUnmount() {
