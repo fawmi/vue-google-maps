@@ -1,1 +1,1 @@
-declare module '@fawmi/vue-google-maps';
+declare module 'vue-google-maps-community-fork';

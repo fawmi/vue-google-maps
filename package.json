@@ -1,7 +1,7 @@
 {
-  "name": "@fawmi/vue-google-maps",
-  "description": "Google Map components for Vue.js 3",
-  "version": "0.9.66",
+  "name": "vue-google-maps-community-fork",
+  "description": "Google Maps components for VueJS 3 maintained by the community",
+  "version": "0.1.0",
   "private": false,
   "main": "src/main.js",
   "keywords": [
@@ -11,7 +11,7 @@
     "Vue 3 Google maps"
   ],
   "bugs": {
-    "url": "https://github.com/fawmi/vue-google-maps/issues"
+    "url": "https://github.com/NathanAP/vue-google-maps-community-fork/issues"
   },
   "scripts": {
     "build": "node service/commands/build.js",
@@ -43,10 +43,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fawmi/vue-google-maps.git"
+    "url": "git+https://github.com/NathanAP/vue-google-maps-community-fork.git"
   },
   "types": "types/index.d.ts",
   "dependencies": {
     "@googlemaps/markerclusterer": "^2.0.3"
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "author": "Nathan A Paludo"
 }
