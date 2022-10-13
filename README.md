@@ -13,9 +13,9 @@ I'll keep this repo forked for now, but I'll transform into a package soon enoug
 The best way to help this library to grow is reporting bugs throught issues and send PR's to improve it. I'm trying to understand everything that is happening yet, TBH I never had such an important library to keep alive, so if you want to help directly as a contribuitor, let me know!
 
 Issues and discussion will be more organic soon.
-I'll create a Discord soon to make things more organized as well.
 
 For now you can contact me in my email: natspaludo@gmail.com
+Also, I created a [Discord](https://discord.gg/6VbKmW5u) for us, feel free to enter
 
 # Original Readme.md:
 
