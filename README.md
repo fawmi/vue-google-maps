@@ -6,6 +6,8 @@ We tried to contact Fawmi many times in different ways, but we never got an answ
 
 You can find more about the community decision [here](https://github.com/fawmi/vue-google-maps/issues/159).
 
+I'll keep this repo forked for now, but I'll transform into a package soon enough.
+
 ## How to contribute with us
 
 The best way to help this library to grow is reporting bugs throught issues and send PR's to improve it. I'm trying to understand everything that is happening yet, TBH I never had such an important library to keep alive, so if you want to help directly as a contribuitor, let me know!
