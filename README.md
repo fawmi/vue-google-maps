@@ -1,6 +1,6 @@
 ## About this library
 
-VGM community fork is a repository to keep the original [Vue Google Maps repository](https://github.com/fawmi/vue-google-maps) alive. The original repository is great, but it wasn't maintained anymore, so the community decided to fork it because many of us depends on it.
+Vue Google Maps Community Fork is a repository to keep the original [Vue Google Maps repository](https://github.com/fawmi/vue-google-maps) alive. The original repository is great, but it wasn't maintained anymore, so the community decided to fork it because many of us depends on it.
 
 We tried to contact Fawmi many times in different ways, but we never got an answer. He did a great job and I'm sure we will be able to talk with him about all the situation. All we want is to keep this library alive and better.
 
