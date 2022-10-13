@@ -1,20 +1,40 @@
+# About this library
+
+VGM community fork is a repository to keep the original [Vue Google Maps repository](https://github.com/fawmi/vue-google-maps) alive. The original repository is great, but it wasn't maintained anymore, so the community decided to fork it because many of us depends on it.
+
+We tried to contact Fawmi many times in different ways, but we never got an answer. He did a great job and we hope to talk to him about all the situation. All we want is to keep this library alive and better.
+
+You can find more about the community decision [here](https://github.com/fawmi/vue-google-maps/issues/159).
+
+# How to contribute with us
+
+The best way to help this library to grow is reporting bugs throught issues and send PR's to improve it. I'm trying to understand everything that is happening yet, TBH I never had such an important library to keep alive, so if you want to help directly as a contribuitor, let me know!
+
+Issues and discussion will be more organic soon.
+I'll create a Discord soon to make things more organized as well.
+
+For now you can contact me in my email: natspaludo@gmail.com
+
+### Original Readme.md ahead
+
 # Vue 3 Google maps Components
 
 Set of mostly used Google Maps components for Vue.js.
 
-#### Why this library exists?
-We heavily use Google Maps in our projects, so I wanted to have a well maintained Google Maps library.
-
 ## Documentation
+
 Checkout [vue-map.netlify.app](https://vue-map.netlify.app) for a detailed documentation or [codesandbox for an example](https://codesandbox.io/s/vue-3-google-maps-ygpr4?file=/src/main.js)
 
 ## Installation
+
 You can install it using npm
+
 ```
 npm install -S @fawmi/vue-google-maps
 ```
 
 ## Basic usage
+
 You need an API Key. Learn how to [get an Api key ](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
 ### Configure Vue to use the Components
@@ -23,58 +43,48 @@ In your `main.js`
 
 ```js
 import { createApp } from 'vue'
-import  VueGoogleMaps from '@fawmi/vue-google-maps'
+import VueGoogleMaps from '@fawmi/vue-google-maps'
 
-const app = createApp(App);
-app.use(VueGoogleMaps, {
+const app = createApp(App)
+app
+  .use(VueGoogleMaps, {
     load: {
-        key: 'YOUR_API_KEY_COMES_HERE',
+      key: 'YOUR_API_KEY_COMES_HERE',
     },
-}).mount('#app')
-
+  })
+  .mount('#app')
 ```
+
 ### Use it anywhere in your components
 
 ```vue
 <template>
-  <GMapMap
-      :center="center"
-      :zoom="7"
-      map-type-id="terrain"
-      style="width: 100vw; height: 900px"
-  >
+  <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 100vw; height: 900px">
   </GMapMap>
 </template>
 
-<script >
+<script>
 export default {
   name: 'App',
   data() {
     return {
-      center: {lat: 51.093048, lng: 6.842120},
+      center: { lat: 51.093048, lng: 6.84212 },
     }
-  }
+  },
 }
 </script>
 ```
+
 ## Components
 
 ### Markers
 
 If you need to add markers to the `Map`, add `GMapMarker` as child of `GMapMap` component.
+
 ```vue
 <template>
-  <GMapMap
-      :center="center"
-      :zoom="7"
-      map-type-id="terrain"
-      style="width: 500px; height: 300px"
-  >
-    <GMapMarker
-        :key="marker.id"
-        v-for="marker in markers"
-        :position="marker.position"
-    />
+  <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 500px; height: 300px">
+    <GMapMarker :key="marker.id" v-for="marker in markers" :position="marker.position" />
   </GMapMap>
 </template>
 <script>
@@ -82,41 +92,37 @@ export default {
   name: 'App',
   data() {
     return {
-      center: {lat: 51.093048, lng: 6.842120},
+      center: { lat: 51.093048, lng: 6.84212 },
       markers: [
         {
           id: 'dfsldjl3r',
           position: {
-            lat: 51.093048, lng: 6.842120
+            lat: 51.093048,
+            lng: 6.84212,
           },
-        }
-      ]
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 ```
 
 ### Cluster
-If you have too many markers, it is helpful to cluster markers. You can easily cluster markers by wrapping your markers with `GMapCluster` component.
 
+If you have too many markers, it is helpful to cluster markers. You can easily cluster markers by wrapping your markers with `GMapCluster` component.
 
 ```vue
 <template>
-  <GMapMap
-      :center="center"
-      :zoom="7"
-      map-type-id="terrain"
-      style="width: 500px; height: 300px"
-  >
+  <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 500px; height: 300px">
     <GMapCluster>
       <GMapMarker
-          :key="index"
-          v-for="(m, index) in markers"
-          :position="m.position"
-          :clickable="true"
-          :draggable="true"
-          @click="center=m.position"
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        :draggable="true"
+        @click="center = m.position"
       />
     </GMapCluster>
   </GMapMap>
@@ -126,46 +132,43 @@ export default {
   name: 'App',
   data() {
     return {
-      center: {lat: 51.093048, lng: 6.842120},
+      center: { lat: 51.093048, lng: 6.84212 },
       markers: [
         {
           position: {
-            lat: 51.093048, lng: 6.842120
+            lat: 51.093048,
+            lng: 6.84212,
           },
-        }
-        , // Along list of clusters
-      ]
+        }, // Along list of clusters
+      ],
     }
-  }
+  },
 }
 </script>
 ```
 
 ### Heatmap
+
 If you need to add heatmap layer to the Map, add visualization library in load config and add GMapHeatmap as child of GMapMap component.
 
 ```js
 import { createApp } from 'vue'
-import  VueGoogleMaps from '@fawmi/vue-google-maps'
+import VueGoogleMaps from '@fawmi/vue-google-maps'
 
-const app = createApp(App);
-app.use(VueGoogleMaps, {
-  load: {
-    key: 'YOUR_API_KEY_COMES_HERE',
-    libraries: "visualization"
-  },
-}).mount('#app')
-
+const app = createApp(App)
+app
+  .use(VueGoogleMaps, {
+    load: {
+      key: 'YOUR_API_KEY_COMES_HERE',
+      libraries: 'visualization',
+    },
+  })
+  .mount('#app')
 ```
 
 ```vue
 <template>
-  <GMapMap
-    ref="myMapRef"
-    :center="center"
-    :zoom="zoom"
-    style="width: 100%; height: 600px"
-  >
+  <GMapMap ref="myMapRef" :center="center" :zoom="zoom" style="width: 100%; height: 600px">
     <GMapHeatmap :data="heatData"></GMapHeatmap>
   </GMapMap>
 </template>
@@ -173,26 +176,26 @@ app.use(VueGoogleMaps, {
 export default {
   name: 'App',
   setup() {
-    const center = {lat: 52.2985593, lng: 104.2455337}
+    const center = { lat: 52.2985593, lng: 104.2455337 }
     const zoom = 12
-    const myMapRef = ref();
+    const myMapRef = ref()
     const heatData = ref([])
 
-    watch(myMapRef, googleMap => {
+    watch(myMapRef, (googleMap) => {
       if (googleMap) {
-        googleMap.$mapPromise.then(map=> {
+        googleMap.$mapPromise.then((map) => {
           heatData.value = [
-            {location: new google.maps.LatLng({lat: 52.2985593, lng: 104.2455337})},
-          ];
+            { location: new google.maps.LatLng({ lat: 52.2985593, lng: 104.2455337 }) },
+          ]
         })
       }
-    });
+    })
 
     return {
       center,
       zoom,
       heatData,
-      myMapRef
+      myMapRef,
     }
   },
 }
@@ -202,7 +205,9 @@ export default {
 Checkout docs for more component
 
 ## Access map object
+
 If you want to access `google map` object, you can access it by getting ref of the map object.
+
 ```vue
 <template>
   <GMapMap ref="myMapRef" />
@@ -211,16 +216,19 @@ If you want to access `google map` object, you can access it by getting ref of t
 export default {
   mounted() {
     console.log(this.$refs.myMapRef)
-  }
+  },
 }
 </script>
 ```
+
 ### Map options
+
 You can pass Map options using options property:
 
 See [MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions) for a complete list of available options.
- ```vue
- <GMapMap
+
+```vue
+<GMapMap
   :options="{
     zoomControl: true,
     mapTypeControl: false,
@@ -228,7 +236,7 @@ See [MapOptions](https://developers.google.com/maps/documentation/javascript/ref
     streetViewControl: false,
     rotateControl: false,
     fullscreenControl: true,
-    disableDefaultUi: false
+    disableDefaultUi: false,
   }"
 >
 </GMapMap>
@@ -242,19 +250,19 @@ Many other components are also supported. Checkout [docs](https://vue-map.netlif
 
 First add `@fawmi/vue-google-maps` to `build.transpile` property in your `nuxt.config.ts`.
 
- ```ts
+```ts
 export default defineNuxtConfig({
   build: {
-    transpile: ['@fawmi/vue-google-maps']
+    transpile: ['@fawmi/vue-google-maps'],
   },
 })
- ```
+```
 
 Then create a plugin `~/plugin/vueGoogleMaps.ts`.
 
 ```ts
 import { defineNuxtPlugin } from '#app'
-import  VueGoogleMaps from '@fawmi/vue-google-maps'
+import VueGoogleMaps from '@fawmi/vue-google-maps'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueGoogleMaps, {
@@ -265,6 +273,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 })
 ```
 
-
 ## Contributions
+
 The best way to contribute is to report reproducible bugs, but feature requests and improvement suggestions are always welcome too. And definitely bug fixes and PR are welcome.
