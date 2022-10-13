@@ -2,20 +2,25 @@
 
 VGM community fork is a repository to keep the original [Vue Google Maps repository](https://github.com/fawmi/vue-google-maps) alive. The original repository is great, but it wasn't maintained anymore, so the community decided to fork it because many of us depends on it.
 
-We tried to contact Fawmi many times in different ways, but we never got an answer. He did a great job and we hope to talk to him about all the situation. All we want is to keep this library alive and better.
+We tried to contact Fawmi many times in different ways, but we never got an answer. He did a great job and I'm sure we will be able to talk with him about all the situation. All we want is to keep this library alive and better.
 
 You can find more about the community decision [here](https://github.com/fawmi/vue-google-maps/issues/159).
 
-I'll keep this repo forked for now, but I'll transform into a package soon enough.
+## How to contribute
 
-## How to contribute with us
+The best way to help this library to grow is reporting bugs throught issues and send PR's to improve it. I'm trying to understand everything that is happening yet, TBH I never had such an important library to keep alive, so if you want to help directly as a contribuitor of this library, let me know!
 
-The best way to help this library to grow is reporting bugs throught issues and send PR's to improve it. I'm trying to understand everything that is happening yet, TBH I never had such an important library to keep alive, so if you want to help directly as a contribuitor, let me know!
+## How to stay in touch with the community
 
-Issues and discussion will be more organic soon.
+You can use Github to communicate with us using issues or discussions, don't be ashamed to ask or express your thoughts or ideas.
+I created a [Discord](https://discord.gg/6VbKmW5u) for the community, feel free to enter and talk with us.
+Also, you can contact me directly in my email: natspaludo@gmail.com .
 
-For now you can contact me in my email: natspaludo@gmail.com
-Also, I created a [Discord](https://discord.gg/6VbKmW5u) for us, feel free to enter
+## TODO
+
+- I need to transform this fork into a npm package, I'll do it ASAP.
+- I will edit the original Readme.md to my own version.
+- I will make issues and discussions more organized.
 
 # Original Readme.md:
 
