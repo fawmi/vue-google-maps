@@ -1,4 +1,4 @@
-# About this library
+## About this library
 
 VGM community fork is a repository to keep the original [Vue Google Maps repository](https://github.com/fawmi/vue-google-maps) alive. The original repository is great, but it wasn't maintained anymore, so the community decided to fork it because many of us depends on it.
 
@@ -6,7 +6,7 @@ We tried to contact Fawmi many times in different ways, but we never got an answ
 
 You can find more about the community decision [here](https://github.com/fawmi/vue-google-maps/issues/159).
 
-# How to contribute with us
+## How to contribute with us
 
 The best way to help this library to grow is reporting bugs throught issues and send PR's to improve it. I'm trying to understand everything that is happening yet, TBH I never had such an important library to keep alive, so if you want to help directly as a contribuitor, let me know!
 
@@ -15,9 +15,9 @@ I'll create a Discord soon to make things more organized as well.
 
 For now you can contact me in my email: natspaludo@gmail.com
 
-### Original Readme.md ahead
+# Original Readme.md:
 
-# Vue 3 Google maps Components
+## Vue 3 Google maps Components
 
 Set of mostly used Google Maps components for Vue.js.
 
