@@ -1,48 +1,46 @@
-## About this library
+## Why this fork exists
 
-Vue Google Maps Community Fork is a repository to keep the original [Vue Google Maps repository](https://github.com/fawmi/vue-google-maps) alive. The original repository is great, but it wasn't maintained anymore, so the community decided to fork it because many of us depends on it.
+Vue Google Maps Community Fork is a repository to keep the original [Vue Google Maps repository](https://github.com/fawmi/vue-google-maps) alive. The original repository is great but it wasn't maintained as the community wanted, so we decided to fork it because many of us depends on it.
 
-We tried to contact Fawmi many times in different ways, but we never got an answer. He did a great job and I'm sure we will be able to talk with him about all the situation. All we want is to keep this library alive and better.
+We tried to contact Fawmi many times in different ways but we never got an answer. He did a great job and I'm sure we will be able to talk with him about all the situation. All we want is to keep this library alive and better and I'm sure Fawni would share the same feeling.
 
-You can find more about the community decision [here](https://github.com/fawmi/vue-google-maps/issues/159).
+More info about the community decision [here](https://github.com/fawmi/vue-google-maps/issues/159).
 
 ## How to contribute
 
-The best way to help this library to grow is reporting bugs throught issues and send PR's to improve it. I'm trying to understand everything that is happening yet, TBH I never had such an important library to keep alive, so if you want to help directly as a contribuitor of this library, let me know!
+The best way to help this library to grow is reporting bugs through issues and send PR's to improve it. Right now I'm just trying to make this library organized and healthy but I'll try my best to help.
 
-## How to stay in touch with the community
+If you want to support directly as a contribuitor of this library, please let me know! Every help is welcome in this moment.
+
+## How to stay connected with the community
 
 You can use Github to communicate with us using issues or discussions, don't be ashamed to ask or express your thoughts or ideas.
+
 I created a [Discord](https://discord.gg/6VbKmW5u) for the community, feel free to enter and talk with us.
-Also, you can contact me directly in my email: natspaludo@gmail.com .
 
-## TODO
+Also, you can contact me directly in sending an email to natspaludo@gmail.com
 
-- I need to transform this fork into a npm package, I'll do it ASAP.
-- I will edit the original Readme.md to my own version.
-- I will make issues and discussions more organized.
+## About this library
 
-# Original Readme.md:
-
-## Vue 3 Google maps Components
-
-Set of mostly used Google Maps components for Vue.js.
+Vue Google Maps Community Fork is a communitary repository. It is a set of the most used Google Maps components made for VueJS 3.
 
 ## Documentation
 
-Checkout [vue-map.netlify.app](https://vue-map.netlify.app) for a detailed documentation or [codesandbox for an example](https://codesandbox.io/s/vue-3-google-maps-ygpr4?file=/src/main.js)
+For now, the original documentation is detailed in [vue-map.netlify.app](https://vue-map.netlify.app) and most of the components are still working properly.
+
+It is in your plans to create a way for you use this package in Codesandbox or Codepen, but right now it is not possible.
 
 ## Installation
 
-You can install it using npm
+You can install this library using this command:
 
 ```
-npm install -S @fawmi/vue-google-maps
+npm install vue-google-maps-community-fork
 ```
 
 ## Basic usage
 
-You need an API Key. Learn how to [get an Api key ](https://developers.google.com/maps/documentation/javascript/get-api-key).
+To use this library you will need an API Key. You can learn how to get an API Key [here](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
 ### Configure Vue to use the Components
 
@@ -50,7 +48,7 @@ In your `main.js`
 
 ```js
 import { createApp } from 'vue'
-import VueGoogleMaps from '@fawmi/vue-google-maps'
+import VueGoogleMaps from 'vue-google-maps-community-fork'
 
 const app = createApp(App)
 app
@@ -255,12 +253,14 @@ Many other components are also supported. Checkout [docs](https://vue-map.netlif
 
 ## Nuxt 3 usage
 
-First add `@fawmi/vue-google-maps` to `build.transpile` property in your `nuxt.config.ts`.
+Warning: this is part of the old documentation and I never used Nuxt, please let me know if it will work properly this way.
+
+First add `vue-google-maps-community-fork` to `build.transpile` property in your `nuxt.config.ts`.
 
 ```ts
 export default defineNuxtConfig({
   build: {
-    transpile: ['@fawmi/vue-google-maps'],
+    transpile: ['vue-google-maps-community-fork'],
   },
 })
 ```
@@ -269,17 +269,17 @@ Then create a plugin `~/plugin/vueGoogleMaps.ts`.
 
 ```ts
 import { defineNuxtPlugin } from '#app'
-import VueGoogleMaps from '@fawmi/vue-google-maps'
+import VueGoogleMaps from 'vue-google-maps-community-fork'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueGoogleMaps, {
     load: {
-      key: 'YOUR_GOOGLE_API_KEY',
+      key: 'YOUR_API_KEY_COMES_HERE',
     },
   })
 })
 ```
 
-## Contributions
+## Sponsorship
 
-The best way to contribute is to report reproducible bugs, but feature requests and improvement suggestions are always welcome too. And definitely bug fixes and PR are welcome.
+Sponsorships aren't being accepted right now because I'm not sure when Fawmi will comeback. Keep in mind that this project belongs to the community and him until further news. Thanks for the support and I hope this library helps you in any stage of it.

@@ -1,7 +1,7 @@
 {
   "name": "vue-google-maps-community-fork",
   "description": "Google Maps components for VueJS 3 maintained by the community",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "main": "src/main.js",
   "keywords": [
