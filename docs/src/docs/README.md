@@ -1,84 +1,97 @@
-# Introduction
-`@fawmi/vue-google-maps` provides a set of Vue.js 3 components wrapping the Google Maps API v3.
+# Getting started
 
-The following components are currently supported:
+Welcome! In `vue-google-maps-community-fork` will you find a set of VueJS 3 components wrapping the Google Maps API.
 
-`Map`, `Marker`, `Cluster`, `InfoWindow`, `Circle`, `Polygon`, `Polyline`, `Rectangle`, `Autocomplete`
+## Before starting
 
-## Install
+It is important to notice that this repository was forked by the community to keep the library alive. You can get more infor about our decision [in this GitHub discussion](https://github.com/NathanAP/vue-google-maps-community-fork/discussions/1).
 
-To install it via NPM
-```bash
-npm install -S @fawmi/vue-google-maps
+Since this library is currently maintained by the community, every help is needed and appreciated! You can follow everything in our [GitHub repository](https://github.com/NathanAP/vue-google-maps-community-fork).
+
+## Installation
+
+You can install this library using npm:
+
+```
+npm install vue-google-maps-community-fork
 ```
 
-## Basic usage
-You need an API Key. Learn how to [get an Api key ](https://developers.google.com/maps/documentation/javascript/get-api-key).
+### Pre-requisites
+
+To use this library you will need an API Key. You can learn how to get one [here](https://developers.google.com/maps/documentation/javascript/get-api-key).
+
+### Configure your enviroment
 
 Initialise the plugin in your `main.js`:
+
 ```js
 import { createApp } from 'vue'
-import VueGoogleMaps from '@fawmi/vue-google-maps'
+import VueGoogleMaps from 'vue-google-maps-community-fork'
 
-const app = createApp(App);
-app.use(VueGoogleMaps, {
+const app = createApp(App)
+app
+  .use(VueGoogleMaps, {
     load: {
-        key: 'YOUR_API_KEY_COMES_HERE',
-        // language: 'de',
+      key: 'YOUR_API_KEY_COMES_HERE',
     },
-}).mount('#app')
+  })
+  .mount('#app')
 ```
 
-Use it anywhere in your components
+### Great! Now you can use anywhere in your components
+
+Here are some examples:
 
 ```vue
 <template>
   <GMapMap
-      :center="{lat: 51.093048, lng: 6.842120}"
-      :zoom="7"
-      map-type-id="terrain"
-      style="width: 100vw; height: 900px"
+    :center="{ lat: 51.093048, lng: 6.84212 }"
+    :zoom="7"
+    map-type-id="terrain"
+    style="width: 100vw; height: 900px"
   >
   </GMapMap>
 </template>
 
-<script >
+<script>
 export default {
   name: 'App',
   data() {
     return {
-      center: {lat: 51.093048, lng: 6.842120},
+      center: { lat: 51.093048, lng: 6.84212 },
     }
-  }
+  },
 }
 </script>
 ```
 
+## Registering Google Maps events
 
-## Register google maps events
+To use Google Maps events you have two options:
 
-In order to use Google maps events, they should either be enabled globally
+- The first (and better) option is to activate them when you need.
 
-```
-app.use(VueGoogleMaps, {
-    load: {
-        key: 'YOUR_API_KEY_COMES_HERE',
-    },
-    autobindAllEvents: true,
-}).mount('#app')
-```
+In this example, we enable `closeclick` event for `GMapInfoWindow` component and register the event.
 
-Or better yet, they should be activated when needed. 
-
-
-In this example, we enable `closeclick` event for `GMapInfoWindow` component and register the event. 
-
-```
-<GMapInfoWindow
-    :closeclick="true"
-    @closeclick="closeMarker"
-    :opened="openedMarkerID === m.id"
-  >
-    <div>I am in info window {{ m.id }}</div>
+```html
+<GMapInfoWindow :closeclick="true" @closeclick="closeMarker" :opened="openedMarkerID === m.id">
+  <div>I am in info window {{ m.id }}</div>
 </GMapInfoWindow>
+```
+
+- The second option is to enable them globally.
+
+```js
+import { createApp } from 'vue'
+import VueGoogleMaps from 'vue-google-maps-community-fork'
+
+const app = createApp(App)
+app
+  .use(VueGoogleMaps, {
+    load: {
+      key: 'YOUR_API_KEY_COMES_HERE',
+    },
+    autobindAllEvents: true, // Add this to enable the events
+  })
+  .mount('#app')
 ```

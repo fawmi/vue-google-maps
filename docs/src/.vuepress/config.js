@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vue 3 Google maps',
+  title: 'Vue 3 Google Maps - Community Fork',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -18,7 +18,7 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#2c3e50' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
   ],
 
   /**
@@ -32,9 +32,7 @@ module.exports = {
     docsDir: '',
     editLinkText: '',
     logo: '/assets/logo.jpg',
-    head: [
-      ['meta', { name: 'theme-color', content: '#2c3e50' }],
-    ],
+    head: [['meta', { name: 'theme-color', content: '#2c3e50' }]],
     lastUpdated: false,
     nav: [
       {
@@ -42,13 +40,13 @@ module.exports = {
         link: '/docs/',
       },
       {
-        text: 'Github',
-        link: 'https://github.com/fawmi/vue-google-maps'
+        text: 'GitHub',
+        link: 'https://github.com/NathanAP/vue-google-maps-community-fork',
       },
       {
-        text: 'NPM',
-        link: 'https://www.npmjs.com/package/@fawmi/vue-google-maps'
-      }
+        text: 'npm',
+        link: 'https://www.npmjs.com/package/vue-google-maps-community-fork',
+      },
     ],
     sidebar: [
       {
@@ -73,7 +71,7 @@ module.exports = {
           '/components/polyline',
           '/components/rectangle',
           '/components/autocomplete',
-        ]
+        ],
       },
       {
         title: 'Examples',
@@ -82,20 +80,18 @@ module.exports = {
         sidebarDepth: 0,
         path: '/examples/',
         children: [
+          '/examples/how-to-add-a-custom-button-to-map',
           '/examples/points-in-polygon',
           '/examples/how-to-access-google-maps-object',
-          '/examples/how-to-add-custom-controls'
-        ]
+          '/examples/how-to-add-custom-controls',
+          '/examples/how-to-open-or-close-info-window-on-event',
+        ],
       },
-
-    ]
+    ],
   },
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
-  plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
-  ]
+  plugins: ['@vuepress/plugin-back-to-top', '@vuepress/plugin-medium-zoom'],
 }
