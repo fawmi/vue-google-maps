@@ -1,70 +1,73 @@
 # Cluster
+
+Here you will find some uses for Google Maps Cluster component:
+
 [[toc]]
+
 ## Cluster your markers
-To cluster objects you simply wrap your markers with the cluster component.
 
+You can add clusters to your `GMapMarker` using `GMapCluster` component inside of `GMapMap` component:
 
-```vue
+```html
 <template>
-  <GMapMap
-      :center="center"
-      :zoom="7"
-      map-type-id="terrain"
-      style="width: 500px; height: 300px"
-  >
+  <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 500px; height: 300px">
     <GMapCluster>
       <GMapMarker
-          :key="index"
-          v-for="(m, index) in markers"
-          :position="m.position"
-          :clickable="true"
-          :draggable="true"
-          @click="center=m.position"
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        :draggable="true"
+        @click="center = m.position"
       />
     </GMapCluster>
   </GMapMap>
 </template>
+
 <script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      center: {lat: 51.093048, lng: 6.842120},
-      markers: [
-        {
-          position: {
-            lat: 51.093048, lng: 6.842120
-          },
-        }
-        , // Along list of clusters
-      ]
-    }
+  export default {
+    name: 'App',
+    data() {
+      return {
+        center: { lat: 51.093048, lng: 6.84212 },
+        markers: [
+          {
+            position: {
+              lat: 51.093048,
+              lng: 6.84212,
+            },
+          }, // Along list of clusters
+        ],
+      }
+    },
   }
-}
 </script>
 ```
 
 ## Props
-The following props can be passed to control behavior of clusters.
+
+You can pass the following props to control behavior of clusters:
 
 ### minimumClusterSize
 
-Defines the minimum distance of markers to cluster them
+Defines the minimum distance of markers to cluster them:
 
-``` js
-:minimumClusterSize="2" 
+```js
+:minimumClusterSize="2"
 ```
 
 ### styles
-With styles prop, you can control style and icon of clusters.
 
-``` js
+Controls style and icon of clusters:
+
+```js
 :styles="clusterIcon"
 ```
 
 ### zoomOnClick
-Defines whether clusters should zoom in, when clicked.
 
-``` js
+Defines whether clusters should zoom in, when clicked:
+
+```js
 :zoomOnClick="true"
 ```

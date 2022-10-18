@@ -1,44 +1,46 @@
 # Marker
+
+Here you will find some uses for Google Maps Marker component:
+
 [[toc]]
 
-## Add marker to your components
-With a marker, you can show specific locations on the map
-```vue
+## Adding marker to your components
+
+You can add markers to your Maps using `GMapMarker` component inside of `GMapMap` component:
+
+```html
 <template>
   <GMapMap>
-    <GMapMarker
-      :key="index"
-      v-for="(m, index) in markers"
-    />
+    <GMapMarker :key="index" v-for="(m, index) in markers" />
   </GMapMap>
 </template>
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      markers: [
-        {
-          position: {
-            lat: 51.093048, lng: 6.842120
-          },
-        }
-      ]
-    }
-  },
-}
-</script>
 
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        markers: [
+          {
+            position: {
+              lat: 51.093048,
+              lng: 6.84212,
+            },
+          },
+        ],
+      }
+    },
+  }
+</script>
 ```
 
-## Enable/Disable events
-You can enable or disable map events by passing props.
+## Enabling or disabling events
 
-```vue{9,10}
+You can enable or disable the Google Maps Marker events by passing `props`:
+
+```html
 <template>
-  <GMapMap
-    ref="myMarker"
-  >
+  <GMapMap ref="myMarker">
     <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
@@ -50,14 +52,13 @@ You can enable or disable map events by passing props.
 </template>
 ```
 
-## Register events
-You can register events like click, the same as you do in your vue components
+## Registering events
 
-```vue{9}
+You can register events (like click) in the same way as you do in your Vue components:
+
+```html
 <template>
-  <GMapMap
-    ref="myMarker"
-  >
+  <GMapMap ref="myMarker">
     <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
@@ -69,13 +70,13 @@ You can register events like click, the same as you do in your vue components
 </template>
 ```
 
-## Add custom icon
-To use custom icon, pass `:icon` prop. You can pass a local resource or an image from internet.
-```vue{9}
+## Adding a custom icon
+
+You can use `:icon` prop to pass a custom icon to your `GMapMarker`. Also, you can pass a local resource or an image from internet:
+
+```html
 <template>
-  <GMapMap
-    ref="myMarker"
-  >
+  <GMapMap ref="myMarker">
     <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
@@ -87,20 +88,19 @@ To use custom icon, pass `:icon` prop. You can pass a local resource or an image
   </GMapMap>
 </template>
 ```
+
 Local resources can be passed in using `require`, for example: `:icon="require('@/assets/images/place-icon.svg').default"`.
 
-You can also pass an object to the icon `prop` to define custom size and label origin: 
+The `icon` prop also can receive an object to define custom size and label origin:
 
-```vue{9-13}
+```html
 <template>
-  <GMapMap
-    ref="myMarker"
-  >
+  <GMapMap ref="myMarker">
     <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
       :position="m.position"
-      :icon= '{
+      :icon='{
           url: "https://image.flaticon.com/teams/slug/google.jpg",
           scaledSize: {width: 77, height: 77},
           labelOrigin: {x: 16, y: -10}

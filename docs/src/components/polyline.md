@@ -1,73 +1,74 @@
 # Polyline
+
+Here you will find some uses for Google Maps Polyline component:
+
 [[toc]]
 
-## Add Polyline to the map
+## Adding Polyline to your Maps
 
-You can add Polyline to the map using `GMapPolyline` component.
+You can add polygons to your Maps using `GMapPolyline` component inside of `GMapMap` component:
 
-```vue
+```html
 <template>
-  <GMapPolyline 
-      :path="path"
-      :editable="true"
-      ref="polyline" />
+  <GMapPolyline :path="path" ref="polyline" />
 </template>
+
 <script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      center: {lat: 1.38, lng: 103.8},
-      path: [
-        {lat: 1.33, lng: 103.75},
-        {lat: 1.43, lng: 103.85},
-      ],
-    }
-  },
-}
-</script>
-```
-
-## Make polyline editable 
-You can make Polyline editable using `editable` prop.
-
-```vue
-<template>
-  <GMapMap>
-    <GMapPolygon
-        :editable="true"  
-        :paths="paths"/>
-  </GMapMap>
-</template>
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-    }
-  },
-}
-</script>
-```
-
-## Polyline options
-You can set Polyline options using `options` prop.
-
-```vue
-<template>
-  <GMapMap>
-    <GMapPolygon :paths="paths"/>
-  </GMapMap>
-</template>
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      options: {
+  export default {
+    name: 'App',
+    data() {
+      return {
+        center: { lat: 1.38, lng: 103.8 },
+        path: [
+          { lat: 1.33, lng: 103.75 },
+          { lat: 1.43, lng: 103.85 },
+        ],
       }
-    }
-  },
-}
+    },
+  }
+</script>
+```
+
+## Making polyline editable
+
+You can make your `GMapPolyline` component editable using `editable` prop:
+
+```html
+<template>
+  <GMapMap>
+    <GMapPolyline :editable="true" :paths="paths" />
+  </GMapMap>
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {}
+    },
+  }
+</script>
+```
+
+## Adding custom options
+
+You can pass Google Maps Polyline options using the prop `options`:
+
+```html
+<template>
+  <GMapMap>
+    <GMapPolyline :options="options" />
+  </GMapMap>
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        options: {},
+      }
+    },
+  }
 </script>
 ```

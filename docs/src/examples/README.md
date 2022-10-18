@@ -1,10 +1,13 @@
-# List
+# Examples
 
-`@fawmi/vue-google-maps` provides a set of Vue.js 3 components wrapping the Google Maps API v3.
+Here you will find some basic examples that might be useful for you.
 
-Currently `Map`, `Marker`, `InfoWindow`, `Polyline`,  `Polygon` and `Rectangle` are supported.
+- [How to add a custom button to my map](./how-to-add-a-custom-button-to-map.md)
 
-Other components are still under development. 
+- [How to get if a clicked area is within polygon in Google Maps](./points-in-polygon.md)
 
+- [How to access Google Maps object](./how-to-access-google-maps-object.md)
 
-Checkout getting started to read, how to install and use vue-google-maps
+- [How to add custom controls](./how-to-add-custom-controls.md)
+
+- [How to open or close an Info window on event](./how-to-open-or-close-info-window-on-event.md)
