@@ -1,24 +1,21 @@
 # Components
-[[toc]]
 
-`@fawmi/vue-google-maps` provides a set of Vue.js 3 components wrapping the Google Maps API v3.
+In this section you will find everything about the currently supported components:
 
-Currently `Map`, `Marker`, `InfoWindow`,  `Cluster`, `Circle`, `Polygon`, `Polyline` and `Rectangle` are supported.
+- [Map](./map.md)
 
-Checkout the docs page for each component to see how to use it.
+- [Marker](./marker.md)
 
-[Map](./map.md)
+- [InfoWindow](./info-window.md)
 
-[Marker](./marker.md)
+- [Cluster](./cluster.md)
 
-[InfoWindow](./info-window.md)
+- [Circle](./circle.md)
 
-[Cluster](./cluster.md)
+- [Polygon](./polygon.md)
 
-[Circle](./circle.md)
+- [Polyline](./polyline.md)
 
-[Polygon](./polygon.md)
-[Polyline](./polyline.md)
-[Rectangle](./rectangle.md)
+- [Rectangle](./rectangle.md)
 
-[Autocomplete](./autocomplete.md)
+- [Autocomplete](./autocomplete.md)

@@ -1,13 +1,13 @@
 {
-  "name": "vue-google-maps-docs",
+  "name": "vue-google-maps-community-fork-docs",
   "version": "0.0.1",
-  "description": "Vue.js 3 components for Google maps",
+  "description": "Documentation for Vue Google Maps Community Fork",
   "main": "index.js",
   "authors": {
-    "name": "Fawad Mirzad",
-    "email": "hi@fawmi.com"
+    "name": "Nathan A Paludo",
+    "email": "natspaludo@gmail.com"
   },
-  "repository": "fawmi/vue-google-maps-docs/vue-google-maps-docs",
+  "repository": "NathanAP/vue-google-maps-community-fork",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"
