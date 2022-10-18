@@ -1,53 +1,51 @@
-
 # Autocomplete
+
+Here you will find some uses for Google Maps Autocomplete component:
+
 [[toc]]
 
+## Pre-requisite: load places library
 
-## Load Google maps places
-Before using Autocomplete, you should load the places library.
+Before using Autocomplete, you need to load the places library:
 
-```vue{5}
+```js
 createApp(App)
   .use(VueGoogleMaps, {
     load: {
-      key: "",
-      libraries: "places"
-    }
+      key: 'YOUR_API_KEY_COMES_HERE',
+      libraries: 'places',
+    },
   })
-  .mount("#app");
-</script>
+  .mount('#app')
 ```
 
+## Adding Autocomplete to your components
 
-## Add autocomplete to your components
-You can add autocomplete to your maps using GMapAutocomplete component.
-```vue
+You can add an Autocomplete to your `template` using `GMapAutocomplete` component:
+
+```html
 <template>
-  <GMapAutocomplete
-       placeholder="This is a placeholder"
-       @place_changed="setPlace"
-    >
-  </GMapAutocomplete>
+  <GMapAutocomplete placeholder="This is a placeholder" @place_changed="setPlace" />
 </template>
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-    }
-  },
-  methods: {
-    setPlace() {
-    }
-  }
-}
-</script>
 
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {}
+    },
+    methods: {
+      setPlace() {},
+    },
+  }
+</script>
 ```
 
-## Custom input for autocomplete
+## Adding a custom input for autocomplete
+
 You can customize input for autocomplete.
-```vue
+
+```html
 <template>
   <GMapAutocomplete @place_changed="setPlace">
     <template #input="slotProps">
@@ -60,6 +58,7 @@ You can customize input for autocomplete.
     </template>
   </GMapAutocomplete>
 </template>
+
 <script>
 export default {
   name: 'App',
@@ -73,13 +72,13 @@ export default {
   }
 }
 </script>
-
 ```
 
-## Custom options
-You can pass google maps auto complete options using options prop
+## Adding custom options
 
-```vue{9}
+You can pass Google Maps Autocomplete options using the prop `options`:
+
+```html
 <template>
     <GMapAutocomplete
         placeholder="This is a placeholder"

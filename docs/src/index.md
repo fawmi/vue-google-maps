@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: 'assets/logo.jpg'
-tagline: Reactive Vue 3 components for Google maps.
+tagline: A library that contains Google Maps reactive components for VueJS 3
 actionText: Read Docs
 actionLink: /docs/
 ---
@@ -17,48 +17,57 @@ actionLink: /docs/
 href="https://stackblitz.com/edit/vue-google-maps-marker?file=src%2Fcomponents%2FComponentWithMap.vue">View example</a>
 </div>
 
+## Before starting
+
+It is important to notice that this repository was forked by the community to keep the library alive. You can get more infor about our decision [in this GitHub discussion](https://github.com/NathanAP/vue-google-maps-community-fork/discussions/1).
+
+Since this library is currently maintained by the community, every help is needed and appreciated! You can follow everything in our [GitHub](https://github.com/NathanAP/vue-google-maps-community-fork).
+
 ## Installation
-You can install it using npm
+
+You can install this library using npm:
+
 ```
-npm install -S @fawmi/vue-google-maps
+npm install vue-google-maps-community-fork
 ```
 
-## Basic usage
-You need an API Key. Learn how to [get an Api key ](https://developers.google.com/maps/documentation/javascript/get-api-key).
+### Pre-requisites
 
-### Configure Vue to use the Components
+To use this library you will need an API Key. You can learn how to get one [here](https://developers.google.com/maps/documentation/javascript/get-api-key).
+
+### Configure your enviroment
 
 In your `main.js` or inside a Nuxt plugin:
 
 ```js
 import { createApp } from 'vue'
-import VueGoogleMaps from '@fawmi/vue-google-maps'
+import VueGoogleMaps from 'vue-google-maps-community-fork'
 
-const app = createApp(App);
-app.use(VueGoogleMaps, {
+const app = createApp(App)
+app
+  .use(VueGoogleMaps, {
     load: {
-        key: 'YOUR_API_KEY_COMES_HERE',
+      key: 'YOUR_API_KEY_COMES_HERE',
     },
-}).mount('#app')
-
+  })
+  .mount('#app')
 ```
-### Use it anywhere in your components
+
+### Great! Now you can use anywhere in your components
+
+Here are some examples:
+
 ```vue
 <template>
-  <GMapMap
-      :center="center"
-      :zoom="7"
-      map-type-id="terrain"
-      style="width: 500px; height: 300px"
-  >
+  <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 500px; height: 300px">
     <GMapCluster>
       <GMapMarker
-          :key="index"
-          v-for="(m, index) in markers"
-          :position="m.position"
-          :clickable="true"
-          :draggable="true"
-          @click="center=m.position"
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        :draggable="true"
+        @click="center = m.position"
       />
     </GMapCluster>
   </GMapMap>
@@ -68,17 +77,17 @@ export default {
   name: 'App',
   data() {
     return {
-      center: {lat: 51.093048, lng: 6.842120},
+      center: { lat: 51.093048, lng: 6.84212 },
       markers: [
         {
           position: {
-            lat: 51.093048, lng: 6.842120
+            lat: 51.093048,
+            lng: 6.84212,
           },
-        }
-        , // Along list of clusters
-      ]
+        }, // Along list of clusters
+      ],
     }
-  }
+  },
 }
 </script>
 ```

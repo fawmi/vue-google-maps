@@ -6,29 +6,21 @@ We tried to contact Fawmi many times in different ways but we never got an answe
 
 More info about the community decision [here](https://github.com/fawmi/vue-google-maps/issues/159).
 
-## How to contribute
+## Welcome!
 
-The best way to help this library to grow is reporting bugs through issues and send PR's to improve it. Right now I'm just trying to make this library organized and healthy but I'll try my best to help.
+Hi! Vue Google Maps Community Fork is a communitary repository. It is a set of the most used Google Maps components made for VueJS 3.
 
-If you want to support directly as a contribuitor of this library, please let me know! Every help is welcome in this moment.
+If you are coming from Fawmi's repository please read [this discussion](https://github.com/NathanAP/vue-google-maps-community-fork/discussions/1) to get some info about the actual situation.
 
-## How to stay connected with the community
+## Changelog
 
-You can use Github to communicate with us using issues or discussions, don't be ashamed to ask or express your thoughts or ideas.
-
-I created a [Discord](https://discord.gg/6VbKmW5u) for the community, feel free to enter and talk with us.
-
-Also, you can contact me directly in sending an email to natspaludo@gmail.com
-
-## About this library
-
-Vue Google Maps Community Fork is a communitary repository. It is a set of the most used Google Maps components made for VueJS 3.
+You can follow the official changelog [here](https://github.com/NathanAP/vue-google-maps-community-fork/discussions/6)!
 
 ## Documentation
 
 For now, the original documentation is detailed in [vue-map.netlify.app](https://vue-map.netlify.app) and most of the components are still working properly.
 
-It is in your plans to create a way for you use this package in Codesandbox or Codepen, but right now it is not possible.
+It is in our plan to create a way for you use this package in Codesandbox or Codepen, but right now it is not possible.
 
 ## Installation
 
@@ -59,6 +51,24 @@ app
   })
   .mount('#app')
 ```
+
+### IMPORTANT ABOUT CONFIGURATION
+
+If you are getting a "Requested module 'fast-deep-equal' does not provide an export named 'default'" error, please notice:
+
+- We are are aware of [this error](https://github.com/NathanAP/vue-google-maps-community-fork/issues/4) and we hope that it will be fixed soon.
+- To avoid it right now, you need to do this configuration in your `vite.config.js`:
+
+```js
+    optimizeDeps: {
+        include: [
+            "vue-google-maps-community-fork",
+            "fast-deep-equal",
+        ],
+    },
+```
+
+- This **WILL NOT** fix it. This is a hack, please follow the issue to keep track of the situation.
 
 ### Use it anywhere in your components
 
@@ -279,7 +289,3 @@ export default defineNuxtPlugin((nuxtApp) => {
   })
 })
 ```
-
-## Sponsorship
-
-Sponsorships aren't being accepted right now because I'm not sure when Fawmi will comeback. Keep in mind that this project belongs to the community and him until further news. Thanks for the support and I hope this library helps you in any stage of it.
