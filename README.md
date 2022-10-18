@@ -18,9 +18,11 @@ You can follow the official changelog [here](https://github.com/NathanAP/vue-goo
 
 ## Documentation
 
-For now, the original documentation is detailed in [vue-map.netlify.app](https://vue-map.netlify.app) and most of the components are still working properly.
+You can find a detailed documentation [here](https://vue-google-maps-community-fork.netlify.app). It will show you how to use every component this library contains and demonstrate some examples for you.
 
-It is in our plan to create a way for you use this package in Codesandbox or Codepen, but right now it is not possible.
+Also, you can enter in [this discussion](https://github.com/NathanAP/vue-google-maps-community-fork/discussions/9) to talk about or read the documentation changelog.
+
+It is in our plans to make it better and more detailed, but for now it might help you start using the library.
 
 ## Installation
 
