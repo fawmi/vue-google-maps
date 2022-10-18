@@ -1,5 +1,16 @@
 <template>
-  <input ref="input" v-bind="$attrs" v-on="$attrs" />
+  <template v-if="$slots['input']">
+    <slot
+      name="input"
+      v-bind="$attrs"
+    ></slot>
+  </template>
+  <input
+    v-else-if="!$slots['input']"
+    ref="input"
+    v-bind="$attrs"
+    v-on="$attrs"
+  />
 </template>
 
 <script>
@@ -38,9 +49,19 @@ const props = {
 
 export default {
   mounted() {
+    const _this = this;
     this.$gmapApiPromiseLazy().then(() => {
+      // get correct input from fallback or slot
+      let refInput = _this.$refs.input
+      if (_this.$slots.input) {
+        const refName = _this.$slots.input()[0].props.ref;
+        const scopedInput = _this.$slots.input()[0].ref.i.ctx.$refs[refName];
+        if (scopedInput) {
+          refInput = scopedInput.$el.getElementsByTagName('input')[0];
+        }
+      }
       if (this.selectFirstOnEnter) {
-        downArrowSimulator(this.$refs.input)
+        downArrowSimulator(refInput)
       }
 
       if (typeof google.maps.places.Autocomplete !== 'function') {
@@ -55,7 +76,7 @@ export default {
         ...this.options,
       }
 
-      this.$autocomplete = new google.maps.places.Autocomplete(this.$refs.input, finalOptions)
+      this.$autocomplete = new google.maps.places.Autocomplete(refInput, finalOptions)
       bindProps(this, this.$autocomplete, mappedProps)
 
       this.$watch('componentRestrictions', (v) => {

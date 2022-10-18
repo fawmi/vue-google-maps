@@ -41,11 +41,44 @@ You can add an Autocomplete to your `template` using `GMapAutocomplete` componen
 </script>
 ```
 
+## Adding a custom input for autocomplete
+
+You can customize input for autocomplete.
+
+```html
+<template>
+  <GMapAutocomplete @place_changed="setPlace">
+    <template #input="slotProps">
+      <v-text-field
+        v-bind="slotProps"
+        ref="input"
+        prepend-inner-icon="mdi-map-marker"
+        hide-details
+      />
+    </template>
+  </GMapAutocomplete>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+    }
+  },
+  methods: {
+    setPlace() {
+    }
+  }
+}
+</script>
+```
+
 ## Adding custom options
 
 You can pass Google Maps Autocomplete options using the prop `options`:
 
-```vue{9}
+```html
 <template>
     <GMapAutocomplete
         placeholder="This is a placeholder"
