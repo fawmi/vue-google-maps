@@ -53,6 +53,22 @@ app
   .mount('#app')
 ```
 
+### Configuration for Nuxt
+
+Warning: this is part of the old documentation and I never used Nuxt, please let me know if it will work properly this way.
+
+In order to your Nuxt 3 project work properly with this library, you need to add `vue-google-maps-community-fork` to `build.transpile` property in your `nuxt.config.ts`.
+
+Also, as pointed [here](https://github.com/NathanAP/vue-google-maps-community-fork/issues/14), you will need to add `@googlemaps/markercluster` into it as well for your builded project work properly.
+
+```ts
+export default defineNuxtConfig({
+  build: {
+    transpile: ['vue-google-maps-community-fork', '@googlemaps/markercluster'],
+  },
+})
+```
+
 ### Great! Now you can use anywhere in your components
 
 Here are some examples:

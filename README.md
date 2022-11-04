@@ -267,11 +267,12 @@ Many other components are also supported. Checkout [docs](https://vue-map.netlif
 
 Warning: this is part of the old documentation and I never used Nuxt, please let me know if it will work properly this way.
 
-In order to your Nuxt 3 project work properly with this library, you need to add  `vue-google-maps-community-fork` to `build.transpile` property in your `nuxt.config.ts`.
+In order to your Nuxt 3 project work properly with this library, you need to add `vue-google-maps-community-fork` to `build.transpile` property in your `nuxt.config.ts`.
 
 Also, as pointed [here](https://github.com/NathanAP/vue-google-maps-community-fork/issues/14), you will need to add `@googlemaps/markercluster` into it as well for your builded project work properly.
 
 Here is an example:
+
 ```ts
 export default defineNuxtConfig({
   build: {
