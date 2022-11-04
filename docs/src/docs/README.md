@@ -20,6 +20,22 @@ npm install vue-google-maps-community-fork
 
 To use this library you will need an API Key. You can learn how to get one [here](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
+### Configuration for Nuxt
+
+Warning: this is part of the old documentation and I never used Nuxt, please let me know if it will work properly this way.
+
+In order to your Nuxt 3 project work properly with this library, you need to add `vue-google-maps-community-fork` to `build.transpile` property in your `nuxt.config.ts`.
+
+Also, as pointed [here](https://github.com/NathanAP/vue-google-maps-community-fork/issues/14), you will need to add `@googlemaps/markercluster` into it as well for your builded project work properly.
+
+```ts
+export default defineNuxtConfig({
+  build: {
+    transpile: ['vue-google-maps-community-fork', '@googlemaps/markercluster'],
+  },
+})
+```
+
 ### Configure your enviroment
 
 Initialise the plugin in your `main.js`:
