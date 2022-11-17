@@ -11,12 +11,20 @@ assignees: ''
 Please use Github discussion, you will find better help there.
 Notice that if you create a question issue, we will close it and create a new discussion for you.
 
-**Codepen support**
-You can use Codepen to report your bug!
-In your Codepen, go to Settings, then select JS. In Add Packages section, search for vue-google-maps-community-fork
+**Playcode support**
+We strongly recommend you to use Playcode to reproduce your code!
+You can find a small template [here](https://playcode.io/1012771).
+Following the steps on the template will make things really, really easier!
 
-**You can delete whatever part you want in this issue, but please be clear and remember to use the Preview option**
-**Also, remember to look if this feature request isn't already created**
+**Codepen support**
+You can use Codepen to report your bug as well!
+In your Codepen, go to Settings, then select JS. In Add Packages section, search for vue-google-maps-community-fork.
+TBH Codepen isn't a really good option because of the file structure, but feel free to use if you prefer it!
+
+**Lastly, remember to look if this issue isn't already created**
+
+**OK! You can delete everything until here!**
+**You can also delete whatever part you want in this issue, but please make it clear**
 
 **Does your feature has anything related to a problem?**
 Please describe what the problem is related to. For example: I'm frustrated that I cannot do [...] easily.
