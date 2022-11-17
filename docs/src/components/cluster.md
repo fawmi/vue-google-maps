@@ -1,8 +1,12 @@
 # Cluster
 
-Here you will find some uses for Google Maps Cluster component:
+Here you will find some uses for Google Maps Clusterers.
 
 [[toc]]
+
+## Before everything
+
+Clustering your markers are only possible because of `@googlemaps/markerclusterer`! The community is thankful for your effort!
 
 ## Cluster your markers
 
@@ -36,7 +40,7 @@ You can add clusters to your `GMapMarker` using `GMapCluster` component inside o
               lat: 51.093048,
               lng: 6.84212,
             },
-          }, // Along list of clusters
+          }, // A long list of clusters
         ],
       }
     },

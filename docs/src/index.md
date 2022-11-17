@@ -100,7 +100,7 @@ export default {
             lat: 51.093048,
             lng: 6.84212,
           },
-        }, // Along list of clusters
+        }, // A long list of clusters
       ],
     }
   },

@@ -54,11 +54,16 @@ app
   .mount('#app')
 ```
 
-### IMPORTANT ABOUT CONFIGURATION
+### AN IMPORTANT POINT ABOUT YOUR CONFIGURATION
 
-If you are getting a "Requested module 'fast-deep-equal' does not provide an export named 'default'" error, please notice:
+You might be getting the following error:
 
-- We are are aware of [this error](https://github.com/NathanAP/vue-google-maps-community-fork/issues/4) and we hope that it will be fixed soon.
+`Requested module 'fast-deep-equal' does not provide an export named 'default'`
+
+Please notice:
+
+- [We are aware](https://github.com/NathanAP/vue-google-maps-community-fork/issues/4) of this problem.
+- We hope that it will be fixed soon enough.
 - To avoid it right now, you need to do this configuration in your `vite.config.js`:
 
 ```js
@@ -70,7 +75,8 @@ If you are getting a "Requested module 'fast-deep-equal' does not provide an exp
     },
 ```
 
-- This **WILL NOT** fix it. This is a hack, please follow the issue to keep track of the situation.
+- This **IS NOT** a fix. This is just a hack we are using to avoid the problem.
+- Please subscribe to the issue to stay in touch with this problem
 
 ### Use it anywhere in your components
 
@@ -129,6 +135,8 @@ export default {
 
 If you have too many markers, it is helpful to cluster markers. You can easily cluster markers by wrapping your markers with `GMapCluster` component.
 
+Note: clusters were not working in the original version of this package. All of the clusters are here because of the community fixes. If you're having trouble with it please [try using the docs](https://vue-google-maps-community-fork.netlify.app/components/cluster.html). Also, feel free to open discussions or issues to get help.
+
 ```vue
 <template>
   <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 500px; height: 300px">
@@ -156,7 +164,7 @@ export default {
             lat: 51.093048,
             lng: 6.84212,
           },
-        }, // Along list of clusters
+        }, // A long list of clusters
       ],
     }
   },
@@ -295,3 +303,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   })
 })
 ```
+
+## Sponsorship
+
+Please read [this discussion](https://github.com/NathanAP/vue-google-maps-community-fork/discussions/1) where we talk about sponsorships.

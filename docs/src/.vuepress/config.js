@@ -85,6 +85,7 @@ module.exports = {
           '/examples/how-to-access-google-maps-object',
           '/examples/how-to-add-custom-controls',
           '/examples/how-to-open-or-close-info-window-on-event',
+          '/examples/using-custom-renderer-function-and-clustering-algorithm',
         ],
       },
     ],
