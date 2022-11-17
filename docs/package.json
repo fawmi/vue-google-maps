@@ -1,6 +1,6 @@
 {
   "name": "vue-google-maps-community-fork-docs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Documentation for Vue Google Maps Community Fork",
   "main": "index.js",
   "authors": {
@@ -9,7 +9,7 @@
   },
   "repository": "NathanAP/vue-google-maps-community-fork",
   "scripts": {
-    "dev": "vuepress dev src",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider vuepress dev src",
     "build": "vuepress build src"
   },
   "license": "MIT",

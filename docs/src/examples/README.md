@@ -11,3 +11,5 @@ Here you will find some basic examples that might be useful for you.
 - [How to add custom controls](./how-to-add-custom-controls.md)
 
 - [How to open or close an Info window on event](./how-to-open-or-close-info-window-on-event.md)
+
+- [Using custom renderer function and clustering algorithm](./using-custom-renderer-function-and-clustering-algorithm.md)
