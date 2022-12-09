@@ -43,9 +43,15 @@ export default buildComponent({
 
   name: 'polyline',
   ctr: () => google.maps.Polyline,
-
-  afterCreate() {
+  emits: events,
+  afterCreate(inst) {
     let clearEvents = () => {}
+    
+    events.forEach((event)=> {
+      inst.addListener(event, (payload)=> {
+        this.$emit(event, payload)
+      });
+    })
 
     this.$watch(
       'path',
