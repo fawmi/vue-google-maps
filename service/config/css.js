@@ -37,9 +37,7 @@ const genStyleRules = () => {
     return { test, use: loaders }
   }
 
-  return [
-    createCSSRule(/\.css$/),
-  ]
+  return [createCSSRule(/\.css$/)]
 }
 
 module.exports = {

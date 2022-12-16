@@ -30,7 +30,7 @@ module.exports = {
     alias: {
       '@': paths.resolve('src'),
     },
-    extensions: ['.js','.vue', '.json'],
+    extensions: ['.js', '.vue', '.json'],
   },
 
   plugins: [
