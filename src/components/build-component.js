@@ -44,17 +44,8 @@ import MapElementMixin from './mapElementMixin'
  *
  */
 export default function (options) {
-  const {
-    mappedProps,
-    name,
-    ctr,
-    ctrArgs,
-    events,
-    beforeCreate,
-    afterCreate,
-    props,
-    ...rest
-  } = options
+  const { mappedProps, name, ctr, ctrArgs, events, beforeCreate, afterCreate, props, ...rest } =
+    options
 
   const promiseName = `$${name}Promise`
   const instanceName = `$${name}Object`

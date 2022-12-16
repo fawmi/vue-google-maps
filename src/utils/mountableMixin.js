@@ -29,7 +29,7 @@ export default {
       this.resize()
     },
     isFunction(functionToCheck) {
-      return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+      return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]'
     },
     _delayedResizeCallback() {
       this.$nextTick(() => this._resizeCallback())

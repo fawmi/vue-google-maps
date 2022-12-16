@@ -15,8 +15,8 @@ import Autocomplete from './components/autocomplete.vue'
 import MapElementMixin from './components/mapElementMixin'
 import buildComponent from './components/build-component'
 import MountableMixin from './utils/mountableMixin'
-import {Env} from "./utils/env";
-let GMapApi = null;
+import { Env } from './utils/env'
+let GMapApi = null
 
 export {
   loadGMapApi,
