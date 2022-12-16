@@ -59,7 +59,6 @@ module.exports = {
         title: 'Components',
         collapsable: false,
         path: '/components/',
-        collapsable: false,
         sidebarDepth: 0,
         children: [
           '/components/map',
@@ -75,7 +74,6 @@ module.exports = {
       },
       {
         title: 'Examples',
-        collapsable: false,
         collapsable: false,
         sidebarDepth: 0,
         path: '/examples/',
