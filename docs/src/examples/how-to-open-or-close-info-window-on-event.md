@@ -1,12 +1,39 @@
 # How to open or close an info window on event
 
-[Interactive example on CodeSandbox](https://stackblitz.com/edit/vue-google-maps-marker-w4hxvd?file=src/components/ComponentWithMap.vue).
+[Interactive example on Playcode](https://playcode.io/1041264).
 
 To open or close info windows after marker click, you can modify the `:opened` prop and maintain a state variable containing ID of the opened marker.
 
 ```html
+<script setup>
+  import { ref } from 'vue'
+
+  const openedMarkerID = ref(null)
+  const center = ref({ lat: 51.093048, lng: 6.84212 })
+  const markers = ref([
+    {
+      id: 1,
+      position: {
+        lat: 51.093048,
+        lng: 6.84212,
+      },
+    },
+    {
+      id: 2,
+      position: {
+        lat: 51.198429,
+        lng: 6.69529,
+      },
+    },
+  ])
+
+  function openMarker(id) {
+    openedMarkerID.value = id
+  }
+</script>
+
 <template>
-  <GMapMap :center="center" :zoom="10" map-type-id="terrain" style="width: 100vw; height: 20rem">
+  <GMapMap :center="center" :zoom="7" style="width: 500px; height: 300px">
     <GMapMarker
       :key="index"
       v-for="(m, index) in markers"
@@ -26,39 +53,7 @@ To open or close info windows after marker click, you can modify the `:opened` p
   </GMapMap>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        openedMarkerID: null,
-        center: { lat: 51.093048, lng: 6.84212 },
-        markers: [
-          {
-            id: 1,
-            position: {
-              lat: 51.093048,
-              lng: 6.84212,
-            },
-          },
-          {
-            id: 2,
-            position: {
-              lat: 51.198429,
-              lng: 6.69529,
-            },
-          },
-        ],
-      }
-    },
-    methods: {
-      openMarker(id) {
-        this.openedMarkerID = id
-      },
-    },
-  }
-</script>
-
-<style>
+<style scoped>
   body {
     margin: 0;
   }

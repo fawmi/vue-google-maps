@@ -1,6 +1,6 @@
 # How to get if a clicked area is within polygon in Google Maps
 
-[Interactive example on CodeSandbox](https://stackblitz.com/edit/vue-google-maps-marker-fnzw4j?file=src%2Fcomponents%2FComponentWithMap.vue)
+[Interactive example on Playcode](https://playcode.io/1041268)
 
 ## Example
 

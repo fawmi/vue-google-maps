@@ -8,13 +8,10 @@ actionLink: /docs/
 
 <div style="display: flex; align-content: center;justify-content: center;">
     <a target="_blank"
-        style="display: inline-block;
-                font-size: 1.2rem;
-                padding: .8rem 1.6rem;
-                border-radius: 4px;
-                box-sizing: border-box;
-                border: 1px solid #000;"
-href="https://stackblitz.com/edit/vue-google-maps-marker?file=src%2Fcomponents%2FComponentWithMap.vue">View example</a>
+        style="display: inline-block; font-size: 1.2rem; padding: .8rem 1.6rem; border-radius: 4px;box-sizing: border-box; border: 1px solid #000;"
+        href="https://playcode.io/1041241">
+        View example
+    </a>
 </div>
 
 ## Before starting
