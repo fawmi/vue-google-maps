@@ -19,7 +19,7 @@ import { mappedPropsToVueProps } from './build-component.js'
 
 const props = {
   center: {
-    required: true,
+    default: { lat: 0, lng: 0 },
     twoWay: true,
     type: Object,
     noBind: true,
