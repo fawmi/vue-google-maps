@@ -13,7 +13,7 @@ You can create a Google Map component using `GMapMap`:
 <GMapMap :center="{ lat: 51.093048, lng: 6.84212 }" :zoom="7" />
 ```
 
-Example on [stackblitz](https://stackblitz.com/edit/vue-google-maps-basic-example)
+Example on [Playcode](https://playcode.io/1041241)
 
 ## Styling your Google Maps component
 
@@ -22,15 +22,16 @@ You can generate custom map styles at [https://mapstyle.withgoogle.com/](https:/
 You can provide custom styles by providing `style` property to the `options` prop:
 
 ```html
+<script setup>
+  import { ref } from 'vue'
+
+  const center = ref({ lat: 51.093048, lng: 6.84212 })
+  const markers = ref([{ position: { lat: 51.093048, lng: 6.84212 } }])
+</script>
+
 <template>
-  <GMapMap
-    :center="center"
-    :options="options"
-    :zoom="10"
-    map-type-id="terrain"
-    style="width: 100vw; height: 20rem"
-  >
-    <GMapCluster :zoomOnClick="true">
+  <GMapMap :center="center" :zoom="7" style="width: 500px; height: 300px">
+    <GMapCluster :maxZoom="12">
       <GMapMarker
         :key="index"
         v-for="(m, index) in markers"
@@ -42,24 +43,9 @@ You can provide custom styles by providing `style` property to the `options` pro
     </GMapCluster>
   </GMapMap>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        center: { lat: 51.093048, lng: 6.84212 },
-        options: {
-          styles: [
-            // here comes the styles your
-          ],
-        },
-      }
-    },
-  }
-</script>
 ```
 
-Example on [stackblitz](https://stackblitz.com/edit/vue-google-maps-marker-ssnfbn?file=src/components/ComponentWithMap.vue)
+Example on [Playcode](https://playcode.io/1041245)
 
 ### Cloud-based styles with Map ID
 

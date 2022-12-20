@@ -1,6 +1,6 @@
 # How to add custom controls
 
-[Interactive example on CodeSandbox](https://stackblitz.com/edit/vue-google-maps-marker-ry3zf7?file=src/components/ComponentWithMap.vue)
+[Interactive example on Playcode](https://playcode.io/1041257)
 
 To add custom controls, you can access google maps object and add controls to it, look at this example or follow the interactive example on CodeSandbox above.
 
@@ -92,10 +92,4 @@ To add custom controls, you can access google maps object and add controls to it
     },
   }
 </script>
-
-<style>
-  body {
-    margin: 0;
-  }
-</style>
 ```
