@@ -103,7 +103,19 @@ const customMethods = {
 
 export default {
   mixins: [mountableMixin],
-  props: mappedPropsToVueProps({...props, ...events.reduce((obj, eventName) => ({...obj, [`on${eventName.charAt(0).toUpperCase()}${eventName.slice(1)}`.replace(/[-_]+(.)?/g, (_, c) => c ? c.toUpperCase() : '')]: Function}), {}) } ),
+  props: mappedPropsToVueProps({
+    ...props,
+    ...events.reduce(
+      (obj, eventName) => ({
+        ...obj,
+        [`on${eventName.charAt(0).toUpperCase()}${eventName.slice(1)}`.replace(
+          /[-_]+(.)?/g,
+          (_, c) => (c ? c.toUpperCase() : '')
+        )]: Function,
+      }),
+      {}
+    ),
+  }),
   inheritAttrs: false,
 
   provide() {

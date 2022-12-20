@@ -9,7 +9,6 @@ const paths = require('../utils/paths')
 const webpackConfig = require('../config/prod')
 const config = require('../project.config')
 
-
 rm(paths.resolve(config.outputDir), (err) => {
   if (err) throw err
 

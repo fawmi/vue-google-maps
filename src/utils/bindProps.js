@@ -1,5 +1,5 @@
 import WatchPrimitiveProperties from '../utils/WatchPrimitiveProperties'
-import {Str} from "./string";
+import { Str } from './string'
 
 export function getPropsValues(vueInst, props) {
   return Object.keys(props).reduce((acc, prop) => {
@@ -39,7 +39,8 @@ export function bindProps(vueInst, googleMapsInst, props) {
     // although this may really be the user's responsibility
     if (type !== Object || !trackProperties) {
       // Track the object deeply
-      vueInst.$watch(attribute,
+      vueInst.$watch(
+        attribute,
         () => {
           const attributeValue = vueInst[attribute]
 

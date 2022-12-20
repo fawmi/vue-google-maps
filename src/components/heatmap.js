@@ -4,16 +4,15 @@ const props = {
   options: {
     type: Object,
     twoWay: false,
-    default: () => {
-    },
+    default: () => {},
   },
   data: {
     type: Array,
-    twoWay: true
+    twoWay: true,
   },
 }
 
-const events = [];
+const events = []
 
 export default buildComponent({
   mappedProps: props,
@@ -21,5 +20,3 @@ export default buildComponent({
   ctr: () => google.maps.visualization.HeatmapLayer,
   events,
 })
-
-

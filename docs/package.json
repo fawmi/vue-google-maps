@@ -9,7 +9,7 @@
   },
   "repository": "NathanAP/vue-google-maps-community-fork",
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider vuepress dev src",
+    "dev": "vuepress dev src",
     "build": "vuepress build src"
   },
   "license": "MIT",

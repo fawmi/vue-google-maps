@@ -1,10 +1,15 @@
 <template>
-  <div @click="()=> {console.log('sdfsd')}">
+  <div
+    @click="
+      () => {
+        console.log('sdfsd')
+      }
+    "
+  >
     <slot></slot>
   </div>
 </template>
 <script>
-
 import buildComponent from './build-component.js'
 
 const props = {
@@ -112,10 +117,10 @@ export default buildComponent({
   },
 
   afterCreate(inst) {
-    events.forEach((event)=> {
-      inst.addListener(event, (payload)=> {
+    events.forEach((event) => {
+      inst.addListener(event, (payload) => {
         this.$emit(event, payload)
-      });
+      })
     })
     if (this.$clusterPromise) {
       this.$clusterPromise.then((co) => {

@@ -15,11 +15,12 @@ export function createMapScript(options) {
   let url =
     baseUrl +
     Object.keys(options)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(options[key])).join('&')
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(options[key]))
+      .join('&')
 
   googleMapScript.setAttribute('src', url)
   googleMapScript.setAttribute('async', '')
   googleMapScript.setAttribute('defer', '')
 
-  return googleMapScript;
+  return googleMapScript
 }

@@ -67,9 +67,11 @@ export default buildComponent({
           eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)])
 
           clearEvents = () => {
-            eventListeners.map((
-              [obj, listenerHandle] // eslint-disable-line no-unused-vars
-            ) => google.maps.event.removeListener(listenerHandle))
+            eventListeners.map(
+              (
+                [obj, listenerHandle] // eslint-disable-line no-unused-vars
+              ) => google.maps.event.removeListener(listenerHandle)
+            )
           }
         }
       },
