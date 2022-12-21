@@ -58,7 +58,7 @@ You might be getting the following error:
 
 Some notes about this:
 
-- [We are aware of this problem]((https://github.com/NathanAP/vue-google-maps-community-fork/issues/4).
+- [We are aware of this problem](https://github.com/NathanAP/vue-google-maps-community-fork/issues/4).
 - It doesn't seems that we have control over this, so we hope that it will be fixed soon enough by the responsibles.
 - To avoid it right now, you need to do this configuration in your `vite.config.js`:
 
