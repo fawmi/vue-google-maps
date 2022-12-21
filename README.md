@@ -1,16 +1,12 @@
-## Why this fork exists
-
-Vue Google Maps Community Fork is a repository to keep the original [Vue Google Maps repository](https://github.com/fawmi/vue-google-maps) alive. The original repository is great but it wasn't maintained as the community wanted, so we decided to fork it because many of us depends on it.
-
-We tried to contact Fawmi many times in different ways but we never got an answer. He did a great job and I'm sure we will be able to talk with him about all the situation. All we want is to keep this library alive and better and I'm sure Fawni would share the same feeling.
-
-More info about the community decision [here](https://github.com/fawmi/vue-google-maps/issues/159).
-
 ## Welcome!
 
 Hi! Vue Google Maps Community Fork is a communitary repository. It is a set of the most used Google Maps components made for VueJS 3.
 
-If you are coming from Fawmi's repository please read [this discussion](https://github.com/NathanAP/vue-google-maps-community-fork/discussions/1) to get some info about the actual situation.
+## About this repository
+
+This repository was forked in October/2022 after the original repository's community decide that it was the best for the project. In [the same discussion](https://github.com/NathanAP/vue-google-maps-community-fork/discussions/1) you will find every information you need about our motivation.
+
+We have an update! Fawmi answered us, please access the discussion to know more about it!
 
 ## Changelog
 
@@ -54,16 +50,16 @@ app
   .mount('#app')
 ```
 
-### AN IMPORTANT POINT ABOUT YOUR CONFIGURATION
+### If you are configuring your project please notice
 
 You might be getting the following error:
 
 `Requested module 'fast-deep-equal' does not provide an export named 'default'`
 
-Please notice:
+Some notes about this:
 
-- [We are aware](https://github.com/NathanAP/vue-google-maps-community-fork/issues/4) of this problem.
-- We hope that it will be fixed soon enough.
+- [We are aware of this problem]((https://github.com/NathanAP/vue-google-maps-community-fork/issues/4).
+- It doesn't seems that we have control over this, so we hope that it will be fixed soon enough by the responsibles.
 - To avoid it right now, you need to do this configuration in your `vite.config.js`:
 
 ```js
@@ -75,10 +71,10 @@ Please notice:
     },
 ```
 
-- This **IS NOT** a fix. This is just a hack we are using to avoid the problem.
-- Please subscribe to the issue to stay in touch with this problem
+- This **IS NOT** a fix! This is just a hack we are using to avoid the problem.
+- We encourage you to subscribe to that issue to stay in touch with this problem
 
-### Use it anywhere in your components
+### Using our components anywhere
 
 ```vue
 <template>
