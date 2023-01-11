@@ -47,7 +47,7 @@ export default buildComponent({
   mappedProps: props,
   name: 'polygon',
   ctr: () => google.maps.Polygon,
-
+  emits: events,
   beforeCreate(options) {
     if (!options.path) delete options.path
     if (!options.paths) delete options.paths
@@ -55,6 +55,12 @@ export default buildComponent({
 
   afterCreate(inst) {
     let clearEvents = () => {}
+    
+    events.forEach((event)=> {
+      inst.addListener(event, (payload)=> {
+        this.$emit(event, payload)
+      });
+    })
 
     // Watch paths, on our own, because we do not want to set either when it is
     // empty
