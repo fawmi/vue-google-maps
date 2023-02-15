@@ -67,14 +67,16 @@ export default buildComponent({
       this.$infoWindowObject.close()
       if (this.opened) {
         this.$infoWindowObject.open(this.$map, this.$markerObject)
-      } else {
-        this.$emit('closeclick')
       }
     },
   },
 
   afterCreate() {
     this._openInfoWindow()
+    this.$infoWindowObject.addListener('closeclick', () => {
+      this.$emit('closeclick')
+      this.$infoWindowObject.open(this.$map, this.$markerObject)
+    })
     this.$watch('opened', () => {
       this._openInfoWindow()
     })
