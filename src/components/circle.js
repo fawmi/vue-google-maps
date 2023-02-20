@@ -43,4 +43,12 @@ export default buildComponent({
   name: 'circle',
   ctr: () => google.maps.Circle,
   events,
+  emits: events,
+  afterCreate(inst) {
+    events.forEach((event) => {
+      inst.addListener(event, (payload) => {
+        this.$emit(event, payload)
+      })
+    })
+  }
 })

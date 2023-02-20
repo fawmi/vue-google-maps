@@ -38,4 +38,12 @@ export default buildComponent({
   name: 'rectangle',
   ctr: () => google.maps.Rectangle,
   events,
+  emits: events,
+  afterCreate(inst) {
+    events.forEach((event) => {
+      inst.addListener(event, (payload) => {
+        this.$emit(event, payload)
+      })
+    })
+  }
 })
