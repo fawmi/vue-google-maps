@@ -45,5 +45,5 @@ export default buildComponent({
         this.$emit(event, payload)
       })
     })
-  }
+  },
 })
