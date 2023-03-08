@@ -104,6 +104,22 @@ You can also disable specific UI components:
 />
 ```
 
+## Max and Min Zoom
+
+You can set the maximum and minimum zoom levels for the map:
+
+```html
+<GMapMap
+  :center="{lat: 51.093048, lng: 6.842120}"
+  :zoom="7"
+  :maxZoom="10"
+  :minZoom="5" />
+```
+
+- Max zoom specifies how far the user can zoom in, 18-20 is normally the max.
+- Min zoom is how far they can zoom out, 0-3 is normally the min.
+
+
 ## Access Google Maps instance
 
 You can easily access the Map instance by accessing `ref` in your component:

@@ -36,6 +36,12 @@ const props = {
     type: Number,
     noBind: true,
   },
+  minZoom: {
+    required: false,
+    twoWay: true,
+    type: Number,
+    noBind: true,
+  },
   heading: {
     type: Number,
     twoWay: true,
