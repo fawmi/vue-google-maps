@@ -17,10 +17,8 @@ import buildComponent from './components/build-component'
 import MountableMixin from './utils/mountableMixin'
 import { Env } from './utils/env'
 let GMapApi = null
-let googleMapsObject = null
 
 export {
-  googleMapsObject,
   loadGMapApi,
   Marker,
   Polyline,
@@ -84,7 +82,6 @@ function makeGMapApiPromiseLazy(options) {
   // Things to do once the API is loaded
   function onApiLoaded() {
     GMapApi.gmapApi = {}
-    googleMapsObject = window.google
     return window.google
   }
 
