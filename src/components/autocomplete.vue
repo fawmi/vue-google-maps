@@ -1,5 +1,5 @@
 <template>
-  <input ref="input" v-bind="$attrs" v-on="$attrs" />
+  <input v-bind="$attrs" ref="input" v-on="$attrs" />
 </template>
 
 <script>
