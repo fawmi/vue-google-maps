@@ -59,7 +59,7 @@ export default {
 
 In order to use Google maps events, they should either be enabled globally
 
-```
+```js
 app.use(VueGoogleMaps, {
     load: {
         key: 'YOUR_API_KEY_COMES_HERE',
@@ -73,7 +73,7 @@ Or better yet, they should be activated when needed.
 
 In this example, we enable `closeclick` event for `GMapInfoWindow` component and register the event. 
 
-```
+```vue
 <GMapInfoWindow
     :closeclick="true"
     @closeclick="closeMarker"
