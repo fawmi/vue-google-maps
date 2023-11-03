@@ -1,5 +1,5 @@
 <template>
-  <div @click="()=> {console.log('sdfsd')}">
+  <div>
     <slot></slot>
   </div>
 </template>
