@@ -34,6 +34,7 @@ const events = [
   'mouseover',
   'mouseup',
   'rightclick',
+  'paths_changed',
 ]
 
 export default buildComponent({
